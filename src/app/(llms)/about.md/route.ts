@@ -12,7 +12,7 @@ ${USER.about.trim()}
 - Last Name: ${USER.lastName}
 - Display Name: ${USER.displayName}
 - Location: ${USER.address}
-- Website: ${USER.website}
+- Website: [${USER.website}](${USER.website})
 
 ## Social Links
 

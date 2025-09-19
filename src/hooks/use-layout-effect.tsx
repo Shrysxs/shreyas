@@ -1,4 +1,3 @@
-// This code comes from https://github.com/radix-ui/primitives/blob/main/packages/react/use-layout-effect/src/use-layout-effect.tsx
 import * as React from "react";
 
 /**

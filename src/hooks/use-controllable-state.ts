@@ -1,13 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// This code comes from https://github.com/radix-ui/primitives/blob/main/packages/react/use-controllable-state/src/use-controllable-state.tsx
-
 import * as React from "react";
 
 import { useLayoutEffect } from "@/hooks/use-layout-effect";
 
 // Prevent bundlers from trying to optimize the import
+// Safe, typed access for React's internal useInsertionEffect when available
 const useInsertionEffect: typeof useLayoutEffect =
-  (React as any)[" useInsertionEffect ".trim().toString()] || useLayoutEffect;
+  (Reflect.get(React, "useInsertionEffect") as
+    | typeof useLayoutEffect
+    | undefined) ?? useLayoutEffect;
 
 type ChangeHandler<T> = (state: T) => void;
 type SetStateFn<T> = React.Dispatch<React.SetStateAction<T>>;
@@ -56,7 +56,7 @@ export function useControllableState<T>({
   const setValue = React.useCallback<SetStateFn<T>>(
     (nextValue) => {
       if (isControlled) {
-        const value = isFunction(nextValue) ? nextValue(prop) : nextValue;
+        const value = isFunction(nextValue) ? nextValue(prop as T) : nextValue;
         if (value !== prop) {
           onChangeRef.current?.(value);
         }
@@ -96,6 +96,8 @@ function useUncontrolledState<T>({
   return [value, setValue, onChangeRef];
 }
 
-function isFunction(value: unknown): value is (...args: any[]) => any {
+function isFunction<T>(
+  value: React.SetStateAction<T>
+): value is (prevState: T) => T {
   return typeof value === "function";
 }
