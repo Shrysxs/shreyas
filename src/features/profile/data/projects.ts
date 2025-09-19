@@ -25,6 +25,31 @@ export const PROJECTS: Project[] = [
     isExpanded: true,
   },
   {
+    id: "rex",
+    title: "ReX – Terminal-Style Regex Playground + AI Tutor",
+    period: {
+      start: "08.2025",
+    },
+    link: "https://rex-gilt.vercel.app/",
+    skills: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Groq API",
+      "LLMs",
+      "Regex",
+      "Open-Source",
+      "Vercel",
+    ],
+    description: `Built a terminal-style regex playground with instant highlighting, capture groups, and flag previews.
+Integrated Groq LLM (Llama 3.3-70B) for plain-English regex explanations and an interactive chat assistant.
+Designed with Next.js + TailwindCSS, fully responsive and deployed server-side on Vercel.
+Optimized for developer experience: copyable matches, error handling, and polished terminal vibes.
+Open-source project, designed to be a go-to tool for developers learning and debugging regex.`,
+    isExpanded: true,
+  },
+  {
     id: "replyify",
     title: "Replyify",
     period: {
