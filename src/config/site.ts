@@ -20,17 +20,13 @@ export const MAIN_NAV: NavItem[] = [
     href: "/",
   },
   {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
     title: "Components",
     href: "/components",
   },
 ];
 
-export const SOURCE_CODE_GITHUB_REPO = "ncdai/chanhdai.com";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/ncdai/chanhdai.com";
+export const SOURCE_CODE_GITHUB_REPO = "Shrysxs/shreyas";
+export const SOURCE_CODE_GITHUB_URL = "https://github.com/Shrysxs/shreyas";
 
 export const UTM_PARAMS = {
   utm_source: "chanhdai.com",

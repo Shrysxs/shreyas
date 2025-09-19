@@ -4,58 +4,27 @@ export const USER: User = {
   firstName: "Shreyas",
   lastName: "Borade",
   displayName: "Shreyas",
-  username: "Shreyas",
+  username: "Shrysxs",
   gender: "male",
   pronouns: "he/him",
-  bio: "Build, Fail, Learn, Grow",
-  flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
-    "Open Source Contributor",
-  ],
+  bio: "Build, Fail, Learn, Grow, Repeat",
+  flipSentences: ["Fullstack Developer", "Web3", "Vibe Debugger"],
   address: "Pune, India",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
-  jobs: [
-    {
-      title: "Senior Frontend Developer & UI Design Lead",
-      company: "Simplamo",
-      website: "https://simplamo.com?ref=IN-926722",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-    },
-  ],
+  phoneNumber: "", // intentionally empty to hide phone number
+  email: "c2hyZXlhc2hib3JhZGUyQGdhbWlsLmNvbQ==", // base64 encoded
+  website: "",
+  jobTitle: "",
+  jobs: [],
   about: `
-Hello, World! I am Chánh Đại — a Design Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
+I’m Shreyas Borade, a 20-year-old developer from Pune, India. I build ideas from scratch and push them until they work—and sometimes break—because that’s how real learning happens.
 
-With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+I’m equally at home with design and development, which means I care about how things look as much as how they function. Lately, I’ve been diving deep into Web3, exploring decentralized applications, smart contracts, and the ways blockchain can reshape how we interact with technology.
 
-One of my key projects, [ZaDark](https://zadark.com), launched in 2022, enhances the Zalo experience on PC and Web, surpassing 80k+ downloads on [SourceForge](https://sourceforge.net/projects/zadark) and reaching 20k+ active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) (as of Sep 2025).
-
-I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. It has earned 4k+ weekly downloads on [npm](https://www.npmjs.com/package/@ncdai/react-wheel-picker) and was selected for [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort.
-
-Let's connect and collaborate!
+Beyond coding, I spend my time exploring new technologies, cycling through the city, watching films, and constantly challenging myself to get better. I’m driven by the belief that growth comes from effort, iteration, and refusing to settle for ordinary.
   `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-light.png?t=1755355653",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
-  keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
-  ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  avatar: "",
+  ogImage: "",
+  namePronunciationUrl: "",
+  keywords: ["shreyas", "shreyas borade", "shrysxs", "fullstack", "web3"],
+  dateCreated: "2025-09-20", // YYYY-MM-DD
 };
