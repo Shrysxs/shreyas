@@ -28,15 +28,17 @@ export function Overview() {
 
         <IntroItem icon={MapPinIcon} content={USER.address} />
 
-        <PhoneItem phoneNumber={USER.phoneNumber} />
+        {USER.phoneNumber && <PhoneItem phoneNumber={USER.phoneNumber} />}
 
         <EmailItem email={USER.email} />
 
-        <IntroItem
-          icon={GlobeIcon}
-          content={urlToName(USER.website)}
-          href={USER.website}
-        />
+        {USER.website && (
+          <IntroItem
+            icon={GlobeIcon}
+            content={urlToName(USER.website)}
+            href={USER.website}
+          />
+        )}
 
         <IntroItem
           icon={USER.gender === "male" ? MarsIcon : VenusIcon}

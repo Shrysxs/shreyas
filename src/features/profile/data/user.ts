@@ -11,8 +11,8 @@ export const USER: User = {
   flipSentences: ["Fullstack Developer", "Web3", "Vibe Debugger"],
   address: "Pune, India",
   phoneNumber: "", // intentionally empty to hide phone number
-  email: "c2hyZXlhc2hib3JhZGUyQGdhbWlsLmNvbQ==", // base64 encoded
-  website: "",
+  email: "c2hyZXlhc2hib3JhZGUyQGdtYWlsLmNvbQ==", // base64 encoded
+  website: "https://shreyas-dev-beige.vercel.app/",
   jobTitle: "",
   jobs: [],
   about: `
@@ -22,7 +22,7 @@ I’m equally at home with design and development, which means I care about how 
 
 Beyond coding, I spend my time exploring new technologies, cycling through the city, watching films, and constantly challenging myself to get better. I’m driven by the belief that growth comes from effort, iteration, and refusing to settle for ordinary.
   `,
-  avatar: "",
+  avatar: "/avatar.jpg",
   ogImage: "",
   namePronunciationUrl: "",
   keywords: ["shreyas", "shreyas borade", "shrysxs", "fullstack", "web3"],
