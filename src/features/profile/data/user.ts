@@ -8,7 +8,12 @@ export const USER: User = {
   gender: "male",
   pronouns: "he/him",
   bio: "Build, Fail, Learn, Grow, Repeat",
-  flipSentences: ["Fullstack Developer", "Web3", "Vibe Debugger"],
+  flipSentences: [
+    "Fullstack Developer",
+    "Web3",
+    "Vibe Debugger",
+    "Linux Enthusiast",
+  ],
   address: "Pune, India",
   phoneNumber: "", // intentionally empty to hide phone number
   email: "c2hyZXlhc2hib3JhZGUyQGdtYWlsLmNvbQ==", // base64 encoded
