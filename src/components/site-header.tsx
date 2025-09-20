@@ -3,23 +3,18 @@ import dynamic from "next/dynamic";
 import { DesktopNav } from "@/components/desktop-nav";
 import { NavItemGitHub } from "@/components/nav-item-github";
 import { MAIN_NAV } from "@/config/site";
-import { getAllPosts } from "@/features/blog/data/posts";
 import { cn } from "@/lib/utils";
 
 import { SiteHeaderWrapper } from "./site-header-wrapper";
 import { ToggleTheme } from "./toggle-theme";
 
-const CommandMenu = dynamic(() =>
-  import("@/components/command-menu").then((mod) => mod.CommandMenu)
-);
+// Search/CommandMenu removed for a cleaner header
 
 const MobileNav = dynamic(() =>
   import("@/components/mobile-nav").then((mod) => mod.MobileNav)
 );
 
 export function SiteHeader() {
-  const posts = getAllPosts();
-
   return (
     <SiteHeaderWrapper
       className={cn(
@@ -41,7 +36,6 @@ export function SiteHeader() {
         <DesktopNav items={MAIN_NAV} />
 
         <div className="flex items-center gap-2">
-          <CommandMenu posts={posts} />
           <NavItemGitHub />
           <ToggleTheme />
           <MobileNav className="sm:hidden" items={MAIN_NAV} />
