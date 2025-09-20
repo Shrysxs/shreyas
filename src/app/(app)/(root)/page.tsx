@@ -4,7 +4,6 @@ import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 import { About } from "@/features/profile/components/about";
 // Removed Blog and Awards sections per personalization
 import { Overview } from "@/features/profile/components/overview";
-import { ProfileCover } from "@/features/profile/components/profile-cover";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
 import { SocialLinks } from "@/features/profile/components/social-links";
@@ -23,7 +22,6 @@ export default function Page() {
       />
 
       <div className="mx-auto md:max-w-3xl">
-        <ProfileCover />
         <ProfileHeader />
         <Separator />
 
