@@ -3,7 +3,6 @@ import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
 // Removed Blog and Awards sections per personalization
-import { Brand } from "@/features/profile/components/brand";
 import { Overview } from "@/features/profile/components/overview";
 import { ProfileCover } from "@/features/profile/components/profile-cover";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
@@ -41,10 +40,6 @@ export default function Page() {
         <Separator />
 
         <Projects />
-        <Separator />
-
-        <Brand />
-        <Separator />
       </div>
     </>
   );

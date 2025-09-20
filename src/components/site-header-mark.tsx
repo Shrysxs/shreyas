@@ -40,20 +40,35 @@ function ChanhDaiMarkMotion() {
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 256"
-      initial={{
-        opacity: 0,
-        transform: "translateY(8px)",
-      }}
+      initial={{ opacity: 0, transform: "translateY(8px)" }}
       animate={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0px)" : "translateY(8px)",
       }}
       transition={{ duration: 0.3 }}
     >
-      <path
-        d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
+      <rect
+        x="8"
+        y="8"
+        width="496"
+        height="240"
+        rx="24"
+        ry="24"
         fill="currentColor"
+        opacity="0.08"
       />
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dominantBaseline="central"
+        fontFamily="inherit"
+        fontWeight={700}
+        fontSize={160}
+        fill="currentColor"
+      >
+        S
+      </text>
     </motion.svg>
   );
 }
