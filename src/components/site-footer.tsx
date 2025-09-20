@@ -1,6 +1,6 @@
 import { RssIcon } from "lucide-react";
 
-import { SITE_INFO, SOURCE_CODE_GITHUB_URL } from "@/config/site";
+import { SITE_INFO } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import { Icons } from "./icons";
@@ -17,20 +17,11 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link"
-            href="https://x.com/iamncdai"
+            href="https://x.com/Shrysxs"
             target="_blank"
             rel="noopener"
           >
-            ncdai
-          </a>
-          . The source code is available on{" "}
-          <a
-            className="link"
-            href={SOURCE_CODE_GITHUB_URL}
-            target="_blank"
-            rel="noopener"
-          >
-            GitHub
+            Shreyas
           </a>
           .
         </p>
