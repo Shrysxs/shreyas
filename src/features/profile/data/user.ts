@@ -9,10 +9,11 @@ export const USER: User = {
   pronouns: "he/him",
   bio: "Build, Fail, Learn, Grow, Repeat",
   flipSentences: [
-    "Fullstack Developer",
-    "Web3",
-    "Vibe Debugger",
+    "Fullstack Devleloper",
+    "Web3 Explorer",
     "Linux Enthusiast",
+    "From terminals to UI's",
+    "Builder,Breaker,Learner,Grower",
   ],
   address: "Pune, India",
   phoneNumber: "", // intentionally empty to hide phone number
