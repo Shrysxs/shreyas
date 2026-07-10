@@ -30,20 +30,26 @@ export default function Page() {
           <div className="border-l border-edge"></div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {allPosts
-            .slice()
-            .sort((a, b) =>
-              dayjs(b.metadata.createdAt).diff(dayjs(a.metadata.createdAt))
-            )
-            .map((post, index) => (
-              <PostItem
-                key={post.slug}
-                post={post}
-                shouldPreloadImage={index <= 4}
-              />
-            ))}
-        </div>
+        {allPosts.length === 0 ? (
+          <div className="flex flex-col items-center justify-center border-t border-b border-edge p-8 text-center sm:col-span-2">
+            <p className="text-muted-foreground">Writing coming soon.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {allPosts
+              .slice()
+              .sort((a, b) =>
+                dayjs(b.metadata.createdAt).diff(dayjs(a.metadata.createdAt))
+              )
+              .map((post, index) => (
+                <PostItem
+                  key={post.slug}
+                  post={post}
+                  shouldPreloadImage={index <= 4}
+                />
+              ))}
+          </div>
+        )}
       </div>
 
       <div className="h-4" />

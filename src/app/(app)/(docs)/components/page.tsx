@@ -24,33 +24,41 @@ export default function Page() {
         </p>
       </div>
 
-      {posts.map((post) => (
-        <Link
-          key={post.slug}
-          href={`/components/${post.slug}`}
-          className="group/post flex items-center border-b border-edge pr-4"
-        >
-          <Icons.react
-            className="mx-4 size-5 shrink-0 text-(--color-react)"
-            aria-hidden
-          />
-
-          <div className="border-l border-dashed border-edge p-4">
-            <h2 className="leading-snug font-medium text-balance underline-offset-4 group-hover/post:underline">
-              {post.metadata.title}
-            </h2>
-          </div>
-
-          {post.metadata.new && (
-            <span
-              className="shrink-0 rounded-md bg-info px-1.5 font-mono text-sm font-medium text-white text-shadow-xs"
+      {posts.length === 0 ? (
+        <div className="border-b border-edge px-4 py-8 text-center">
+          <p className="text-muted-foreground">
+            Open-source components will be published here later.
+          </p>
+        </div>
+      ) : (
+        posts.map((post) => (
+          <Link
+            key={post.slug}
+            href={`/components/${post.slug}`}
+            className="group/post flex items-center border-b border-edge pr-4"
+          >
+            <Icons.react
+              className="mx-4 size-5 shrink-0 text-(--color-react)"
               aria-hidden
-            >
-              New
-            </span>
-          )}
-        </Link>
-      ))}
+            />
+
+            <div className="border-l border-dashed border-edge p-4">
+              <h2 className="leading-snug font-medium text-balance underline-offset-4 group-hover/post:underline">
+                {post.metadata.title}
+              </h2>
+            </div>
+
+            {post.metadata.new && (
+              <span
+                className="shrink-0 rounded-md bg-info px-1.5 font-mono text-sm font-medium text-white text-shadow-xs"
+                aria-hidden
+              >
+                New
+              </span>
+            )}
+          </Link>
+        ))
+      )}
 
       <div className="h-4" />
     </div>
