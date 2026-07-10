@@ -2,7 +2,7 @@ import type { SocialLink } from "../types/social-links";
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    icon: "https://cdn.simpleicons.org/linkedin/0A66C2",
+    icon: "https://api.iconify.design/logos:linkedin-icon.svg",
     title: "LinkedIn",
     description: "shrysxs",
     href: "https://www.linkedin.com/in/shrysxs",

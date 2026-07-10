@@ -59,12 +59,13 @@ export function TeckStack() {
                     aria-label={tech.title}
                   >
                     <Image
-                      src={getDeviconUrl(tech.key)}
+                      src={tech.icon || getDeviconUrl(tech.key)}
                       alt={`${tech.title} icon`}
                       width={32}
                       height={32}
                       unoptimized
                       onError={(e) => {
+                        if (tech.icon) return;
                         // Fallback to plain variant if original fails
                         const img = e.currentTarget;
                         if (!img.src.includes("plain")) {
