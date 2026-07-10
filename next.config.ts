@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "TODO-domain-placeholder.com",
+        hostname: "shreyas.dev",
         port: "",
       },
     ],

@@ -52,7 +52,6 @@ export function remarkComponent() {
           let source = fs.readFileSync(filePath, "utf8");
 
           // Replace imports.
-          // TODO: Use @swc/core and a visitor to replace this.
           // For now a simple regex should do.
           source = source.replaceAll(`@/registry/`, "@/components/");
           source = source.replaceAll("export default", "export");
@@ -98,7 +97,6 @@ export function remarkComponent() {
           let source = fs.readFileSync(filePath, "utf8");
 
           // Replace imports.
-          // TODO: Use @swc/core and a visitor to replace this.
           // For now a simple regex should do.
           source = source.replaceAll(`@/registry/`, "@/components/");
           source = source.replaceAll("export default", "export");
