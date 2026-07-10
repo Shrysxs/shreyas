@@ -14,15 +14,14 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Full-time",
         icon: "idea",
         description: `- Historical-market trading-skill verification platform built on Solana.
-- Originated at the Colosseum Frontier hackathon; product has since pivoted.
+- Originated at Colosseum Frontier hackathon; product has since pivoted.
 - Handling both technical and non-technical founding responsibilities.`,
         skills: [
           "Solana",
           "TypeScript",
-          "Next.js",
           "Rust",
+          "Next.js",
           "Smart Contracts",
-          "Product",
           "Leadership",
         ],
         isExpanded: true,
@@ -36,22 +35,20 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "freelance-fullstack",
-        title: "Full Stack Developer",
+        title: "Full Stack Freelancer",
         employmentPeriod: {
           start: "2025",
         },
-        employmentType: "Part-time",
+        employmentType: "Self-employed",
         icon: "code",
-        description: `- Independent freelance full stack developer.
-- Building web apps, Web3 integrations, and AI-powered tools for clients.`,
+        description: `- Independent freelance full stack developer.`,
         skills: [
           "TypeScript",
-          "Next.js",
           "React",
+          "Next.js",
           "Node.js",
           "Web3",
           "AI/LLM APIs",
-          "Vercel",
         ],
         isExpanded: true,
       },
@@ -66,20 +63,14 @@ export const EXPERIENCES: Experience[] = [
         id: "ceminted-tech",
         title: "Tech Team Member",
         employmentPeriod: {
-          start: "10.2025",
-          end: "11.2025",
+          start: "2025",
         },
         employmentType: "Contract",
         icon: "code",
         description: `- Early-stage Web3 startup (Canadian) building privacy trading and dark pools on Solana.
-- Contributed as tech team during the Colosseum Cypherpunk hackathon.`,
-        skills: [
-          "Solana",
-          "TypeScript",
-          "Smart Contracts",
-          "Web3",
-          "Privacy",
-        ],
+- Tied to Colosseum Cypherpunk, Oct 2025.`,
+        skills: ["Solana", "TypeScript", "Web3", "Privacy", "Dark Pools"],
+        isExpanded: true,
       },
     ],
   },

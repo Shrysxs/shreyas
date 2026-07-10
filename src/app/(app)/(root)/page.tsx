@@ -2,6 +2,8 @@ import dayjs from "dayjs";
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
+import { Experiences } from "@/features/profile/components/experiences";
+import { Hackathons } from "@/features/profile/components/hackathons";
 // Removed Blog and Awards sections per personalization
 import { Overview } from "@/features/profile/components/overview";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
@@ -32,6 +34,12 @@ export default function Page() {
         <Separator />
 
         <About />
+        <Separator />
+
+        <Experiences />
+        <Separator />
+
+        <Hackathons />
         <Separator />
 
         <TeckStack />

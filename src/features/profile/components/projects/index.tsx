@@ -4,6 +4,17 @@ import { PROJECTS } from "../../data/projects";
 import { Panel, PanelHeader, PanelTitle } from "../panel";
 import { ProjectItem } from "./project-item";
 
+function parseDate(dateStr: string): Date {
+  const [month, year] = dateStr.split(".").map(Number);
+  return new Date(year, month - 1);
+}
+
+const sortedProjects = [...PROJECTS].sort((a, b) => {
+  const dateA = parseDate(a.period.start);
+  const dateB = parseDate(b.period.start);
+  return dateB.getTime() - dateA.getTime();
+});
+
 export function Projects() {
   return (
     <Panel id="projects">
@@ -11,13 +22,13 @@ export function Projects() {
         <PanelTitle>
           Projects
           <sup className="ml-1 font-mono text-sm text-muted-foreground select-none">
-            ({PROJECTS.length})
+            ({sortedProjects.length})
           </sup>
         </PanelTitle>
       </PanelHeader>
 
       <CollapsibleList
-        items={PROJECTS}
+        items={sortedProjects}
         max={4}
         renderItem={(item) => <ProjectItem project={item} />}
       />
