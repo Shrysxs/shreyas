@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-import { ChanhDaiMark } from "@/components/chanhdai-mark";
+import { ChanhDaiMark } from "@/components/chanhdai-mark"; // renders Shreyas's "S" mark
 
 const variants = {
   show: {

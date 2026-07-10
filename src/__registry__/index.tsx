@@ -48,116 +48,11 @@ export const Index: Record<string, any> = {
   },
   "apple-hello-effect": {
     name: "apple-hello-effect",
-    description: "Create a Xin chào and Hello writing effect inspired by Apple using Motion for React.",
+    description: "Apple-inspired writing effect animation.",
     type: "registry:component",
     files: [{
       path: "src/registry/apple-hello-effect/apple-hello-effect.tsx",
       type: "registry:component",
     }],
-  },
-  "wheel-picker": {
-    name: "wheel-picker",
-    description: "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
-    type: "registry:component",
-    files: [{
-      path: "src/registry/wheel-picker/wheel-picker.tsx",
-      type: "registry:component",
-    }],
-  },
-  "work-experience": {
-    name: "work-experience",
-    description: "Displays a list of work experiences with role details and durations.",
-    type: "registry:component",
-    files: [{
-      path: "src/registry/work-experience/work-experience.tsx",
-      type: "registry:component",
-    }],
-  },
-  "wheel-picker-block-01": {
-    name: "wheel-picker-block-01",
-    description: "",
-    type: "registry:block",
-    files: [{
-      path: "src/registry/examples/wheel-picker-demo.tsx",
-      type: "registry:component",
-    }],
-  },
-  "wheel-picker-block-02": {
-    name: "wheel-picker-block-02",
-    description: "",
-    type: "registry:block",
-    files: [{
-      path: "src/registry/examples/wheel-picker-form-demo.tsx",
-      type: "registry:component",
-    }],
-  },
-  "work-experience-block-01": {
-    name: "work-experience-block-01",
-    description: "",
-    type: "registry:block",
-    files: [{
-      path: "src/registry/examples/work-experience-demo.tsx",
-      type: "registry:component",
-    }],
-  },
-  "apple-hello-effect-vi-demo": {
-    name: "apple-hello-effect-vi-demo",
-    description: "",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/apple-hello-effect-vi-demo.tsx",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/apple-hello-effect-vi-demo.tsx")),
-  },
-  "apple-hello-effect-en-demo": {
-    name: "apple-hello-effect-en-demo",
-    description: "",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/apple-hello-effect-en-demo.tsx",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/apple-hello-effect-en-demo.tsx")),
-  },
-  "theme-switcher-demo": {
-    name: "theme-switcher-demo",
-    description: "",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/theme-switcher-demo.tsx",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/theme-switcher-demo.tsx")),
-  },
-  "wheel-picker-demo": {
-    name: "wheel-picker-demo",
-    description: "",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/wheel-picker-demo.tsx",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/wheel-picker-demo.tsx")),
-  },
-  "wheel-picker-form-demo": {
-    name: "wheel-picker-form-demo",
-    description: "",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/wheel-picker-form-demo.tsx",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/wheel-picker-form-demo.tsx")),
-  },
-  "work-experience-demo": {
-    name: "work-experience-demo",
-    description: "",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/work-experience-demo.tsx",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/work-experience-demo.tsx")),
   },
 }

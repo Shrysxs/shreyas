@@ -7,6 +7,30 @@ import { cn } from "@/lib/utils";
 import { TECH_STACK } from "../data/tech-stack";
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 
+// Map tech keys to devicons names (https://devicons.github.io/devicon/)
+const DEVICON_OVERRIDES: Record<string, string> = {
+  nextjs2: "nextjs",
+  js: "javascript",
+  shadcn_ui: "tailwindcss",
+  "shadcn-ui": "tailwindcss",
+  radixui: "radixui",
+  mobx_state_tree: "mobx",
+  chatgpt: "openai",
+  ps: "photoshop",
+  nodejs: "nodejs",
+  bun: "bun",
+};
+
+function getDeviconName(key: string): string {
+  return DEVICON_OVERRIDES[key] ?? key.replace(/-/g, "");
+}
+
+function getDeviconUrl(key: string, colored = true): string {
+  const name = getDeviconName(key);
+  const variant = colored ? "original" : "plain";
+  return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${variant}.svg`;
+}
+
 export function TeckStack() {
   return (
     <Panel id="stack">
@@ -32,34 +56,20 @@ export function TeckStack() {
                     rel="noopener noreferrer"
                     aria-label={tech.title}
                   >
-                    {tech.theme ? (
-                      <>
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
-                          alt={`${tech.title} light icon`}
-                          width={32}
-                          height={32}
-                          className="hidden [html.light_&]:block"
-                          unoptimized
-                        />
-                        <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
-                          alt={`${tech.title} dark icon`}
-                          width={32}
-                          height={32}
-                          className="hidden [html.dark_&]:block"
-                          unoptimized
-                        />
-                      </>
-                    ) : (
-                      <Image
-                        src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
-                        alt={`${tech.title} icon`}
-                        width={32}
-                        height={32}
-                        unoptimized
-                      />
-                    )}
+                    <Image
+                      src={getDeviconUrl(tech.key)}
+                      alt={`${tech.title} icon`}
+                      width={32}
+                      height={32}
+                      unoptimized
+                      onError={(e) => {
+                        // Fallback to plain variant if original fails
+                        const img = e.currentTarget;
+                        if (!img.src.includes("plain")) {
+                          img.src = getDeviconUrl(tech.key, false);
+                        }
+                      }}
+                    />
                     <span className="sr-only">{tech.title}</span>
                   </a>
                 </SimpleTooltip>

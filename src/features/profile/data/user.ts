@@ -17,7 +17,7 @@ export const USER: User = {
   ],
   address: "Pune, India",
   phoneNumber: "", // intentionally empty to hide phone number
-  email: "c2hyZXlhc2hib3JhZGUyQGdtYWlsLmNvbQ==", // base64 encoded
+  email: "Y29udGFjdC5zaHJleWFzaGJvcmFkZUBnbWFpbC5jb20=", // base64 encoded (contact.shreyashborade@gmail.com)
   website: "https://shreyas-dev-beige.vercel.app/",
   jobTitle: "",
   jobs: [],
