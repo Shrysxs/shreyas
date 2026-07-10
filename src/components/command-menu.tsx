@@ -17,7 +17,6 @@ import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-
 import {
   CommandDialog,
   CommandEmpty,
@@ -31,6 +30,7 @@ import type { Post } from "@/features/blog/types/post";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { cn } from "@/lib/utils";
 
+import { BrandMark } from "./brand-mark";
 import { Icons } from "./icons";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
@@ -49,7 +49,7 @@ const MENU_LINKS: CommandLinkItem[] = [
   {
     title: "Potfolio",
     href: "/",
-    icon: ChanhDaiMark,
+    icon: BrandMark,
   },
   {
     title: "Blog",
@@ -154,8 +154,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     },
     [router]
   );
-
-
 
   const handleThemeChange = useCallback(
     (theme: "light" | "dark" | "system") => {

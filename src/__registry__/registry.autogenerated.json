@@ -32,52 +32,6 @@
           "type": "registry:hook"
         }
       ]
-    },
-    {
-      "name": "theme-switcher",
-      "type": "registry:component",
-      "title": "Theme Switcher",
-      "description": "A theme switcher component for Next.js apps with next-themes and Tailwind CSS, supporting system, light, and dark modes.",
-      "dependencies": [
-        "next-themes",
-        "lucide-react",
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "src/registry/theme-switcher/theme-switcher.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "flip-sentences",
-      "type": "registry:component",
-      "title": "Flip Sentences",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "src/registry/flip-sentences/flip-sentences.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
-      "name": "apple-hello-effect",
-      "type": "registry:component",
-      "title": "Apple Hello Effect",
-      "description": "Apple-inspired writing effect animation.",
-      "dependencies": [
-        "motion"
-      ],
-      "files": [
-        {
-          "path": "src/registry/apple-hello-effect/apple-hello-effect.tsx",
-          "type": "registry:component"
-        }
-      ]
     }
   ]
 }

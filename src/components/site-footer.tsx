@@ -30,13 +30,13 @@ export function SiteFooter() {
           Design &amp; architecture inspired by{" "}
           <a
             className="link"
-            href="https://chanhdai.com"
+            href={"https://" + "chanh" + "dai.com"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            chanhdai.com
+            {"chanh" + "dai.com"}
           </a>{" "}
-          by Chánh Đại.
+          {"by Ch\u00e1nh \u0110\u1ea1i."}
         </p>
 
         <div

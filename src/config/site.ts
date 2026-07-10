@@ -3,7 +3,7 @@ import type { NavItem } from "@/types/nav";
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.APP_URL || "https://shreyas-dev-beige.vercel.app",
+  url: process.env.APP_URL || "https://TODO-domain-placeholder.com", // TODO: Update once domain is finalized
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -21,11 +21,11 @@ export const MAIN_NAV: NavItem[] = [
   },
 ];
 
-export const SOURCE_CODE_GITHUB_REPO = "Shrysxs/shreyas";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/Shrysxs/shreyas";
+export const SOURCE_CODE_GITHUB_REPO = "shrysxs/shreyas";
+export const SOURCE_CODE_GITHUB_URL = "https://github.com/shrysxs/shreyas";
 
 export const UTM_PARAMS = {
-  utm_source: "shreyas.dev",
+  utm_source: "TODO-domain-placeholder.com", // TODO: Update once domain is finalized
   utm_medium: "portfolio_website",
   utm_campaign: "referral",
 };

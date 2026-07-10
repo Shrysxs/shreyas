@@ -7,7 +7,7 @@ import puppeteer from "puppeteer-core";
 const executablePath =
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const url = process.env.URL || "http://localhost:1408";
-const outputDir = path.join(process.cwd(), ".ncdai/screenshots");
+const outputDir = path.join(process.cwd(), ".shrysxs/screenshots");
 
 const SIZE = {
   // Full HD

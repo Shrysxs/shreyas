@@ -4,35 +4,39 @@ export const USER: User = {
   firstName: "Shreyas",
   lastName: "Borade",
   displayName: "Shreyas",
-  username: "Shrysxs",
+  username: "shrysxs",
   gender: "male",
   pronouns: "he/him",
-  bio: "Build, Fail, Learn, Grow, Repeat",
+  bio: "Software engineer building products across AI, Web3, and modern web technologies.",
   flipSentences: [
-    "Fullstack Devleloper",
-    "Web3 Explorer",
+    "Full Stack Developer",
+    "Web3 Developer",
+    "Smart Contract Developer",
     "Linux Enthusiast",
-    "From terminals to UI's",
-    "Builder,Breaker,Learner,Grower",
+    "From terminals to UIs",
+    "Builder, Breaker, Learner, Grower",
   ],
-  address: "Pune, India",
+  address: "Pune, Maharashtra, India (open to relocation & remote)",
   phoneNumber: "", // intentionally empty to hide phone number
   email: "Y29udGFjdC5zaHJleWFzaGJvcmFkZUBnbWFpbC5jb20=", // base64 encoded (contact.shreyashborade@gmail.com)
-  website: "https://shreyas-dev-beige.vercel.app/",
-  jobTitle: "",
+  website: "https://TODO-domain-placeholder.com",
+  jobTitle: "Full Stack Developer · Web3 Developer · Smart Contract Developer",
   jobs: [],
   about: `
-I’m Shreyas Borade, a 20-year-old developer from Pune, India. Most things I build start half-broken—I push until they either work or collapse, and both outcomes teach me. Design came along the way, so now I try to care about how things look as much as how they work.
+Software engineer building products across AI, Web3, and modern web technologies.
 
-I’ve lived close to the machine: distro-hopping through Ubuntu, Fedora, Artix, Void, and finally Arch (yes, I use Arch btw). I’ve gone from Neovim and Emacs to Cursor and v0, moving between raw terminals and vibe coding. That spectrum is where I feel most at home.
-
-Now I’m stepping into Web3, outgrowing the old internet and chasing what decentralized apps and smart contracts can unlock. It feels like the natural next step in breaking things open.
-
-Off-screen, I ride my bike through nature to reset. Movies hit me differently too—like Whiplash, when Fletcher says, “If you want a fu**ing part, then earn it.” That’s not just a line to me, it’s the rule I live by.
+I work primarily with TypeScript, React, Next.js, and cloud-native tooling, and enjoy solving problems that sit at the intersection of engineering, product design, and user experience. Outside of coding, I'm interested in distributed systems, physics, history, and emerging technologies.
   `,
   avatar: "/avatar.jpg",
   ogImage: "",
   namePronunciationUrl: "",
-  keywords: ["shreyas", "shreyas borade", "shrysxs", "fullstack", "web3"],
+  keywords: [
+    "shreyas",
+    "shreyas borade",
+    "shrysxs",
+    "fullstack",
+    "web3",
+    "smart contracts",
+  ],
   dateCreated: "2025-09-20", // YYYY-MM-DD
 };

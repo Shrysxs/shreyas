@@ -1,4 +1,4 @@
-export function ChanhDaiWordmark(props: React.ComponentProps<"svg">) {
+export function BrandWordmark(props: React.ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,6 @@ export function ChanhDaiWordmark(props: React.ComponentProps<"svg">) {
   );
 }
 
-export function getWordmarkSVG(color: string) {
+export function getBrandWordmarkSVG(color: string) {
   return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 2048 256"><text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-family="inherit" font-weight="700" font-size="144" fill="${color}">SHREYAS</text></svg>`;
 }

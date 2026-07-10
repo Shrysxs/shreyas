@@ -5,7 +5,7 @@ import { rimraf } from "rimraf";
 import { type Registry, registrySchema } from "shadcn/schema";
 
 import { registryConfig } from "../config/registry";
-import { registry } from "../registry";
+import { registry } from "../registry/index";
 
 const REGISTRY_PATH = path.join(process.cwd(), "src/__registry__");
 const PUBLIC_REGISTRY_PATH = path.join(process.cwd(), "public/r");
@@ -107,20 +107,24 @@ export const Index: Record<string, any> = {`;
   await fs.writeFile(path.join(REGISTRY_PATH, "index.tsx"), index, "utf8");
 }
 
-try {
-  console.log("💽 Building registry...");
+async function run() {
+  try {
+    console.log("💽 Building registry...");
 
-  const result = registrySchema.safeParse(registry);
+    const result = registrySchema.safeParse(registry);
 
-  if (!result.success) {
-    console.error(result.error);
+    if (!result.success) {
+      console.error(result.error);
+      process.exit(1);
+    }
+
+    await buildRegistry(result.data);
+
+    console.log("✅ Done!");
+  } catch (error) {
+    console.error(error);
     process.exit(1);
   }
-
-  await buildRegistry(result.data);
-
-  console.log("✅ Done!");
-} catch (error) {
-  console.error(error);
-  process.exit(1);
 }
+
+run();

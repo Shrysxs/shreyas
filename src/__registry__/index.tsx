@@ -28,31 +28,4 @@ export const Index: Record<string, any> = {
       type: "registry:hook",
     }],
   },
-  "theme-switcher": {
-    name: "theme-switcher",
-    description: "A theme switcher component for Next.js apps with next-themes and Tailwind CSS, supporting system, light, and dark modes.",
-    type: "registry:component",
-    files: [{
-      path: "src/registry/theme-switcher/theme-switcher.tsx",
-      type: "registry:component",
-    }],
-  },
-  "flip-sentences": {
-    name: "flip-sentences",
-    description: "",
-    type: "registry:component",
-    files: [{
-      path: "src/registry/flip-sentences/flip-sentences.tsx",
-      type: "registry:component",
-    }],
-  },
-  "apple-hello-effect": {
-    name: "apple-hello-effect",
-    description: "Apple-inspired writing effect animation.",
-    type: "registry:component",
-    files: [{
-      path: "src/registry/apple-hello-effect/apple-hello-effect.tsx",
-      type: "registry:component",
-    }],
-  },
 }

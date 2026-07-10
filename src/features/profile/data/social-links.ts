@@ -10,14 +10,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "https://cdn.simpleicons.org/x/000000",
     title: "X (Formerly Twitter)",
-    description: "@Shrysxs",
-    href: "https://x.com/Shrysxs",
+    description: "@shrysxs",
+    href: "https://x.com/shrysxs",
   },
   {
     icon: "https://cdn.simpleicons.org/github/181717",
     title: "GitHub",
-    description: "Shrysxs",
-    href: "https://github.com/Shrysxs",
+    description: "shrysxs",
+    href: "https://github.com/shrysxs",
   },
   {
     icon: "https://cdn.simpleicons.org/telegram/26A5E4",
@@ -30,5 +30,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     title: "Discord",
     description: "shrysxs",
     href: "https://discord.com/users/shrysxs",
+  },
+  {
+    icon: "https://cdn.simpleicons.org/caldotcom/000000",
+    title: "Book a call",
+    description: "cal.com/shrysxs",
+    href: "https://cal.com/shrysxs",
   },
 ];
