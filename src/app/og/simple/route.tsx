@@ -6,74 +6,61 @@ import { ImageResponse } from "next/og";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
-  const title = searchParams.get("title");
+  const title = searchParams.get("title") || "Shreyas";
 
-  const robotoCondensedMedium = await readFile(
-    join(process.cwd(), "src/assets/fonts/RobotoCondensed-Medium.ttf")
+  const fontSans = await readFile(
+    join(process.cwd(), "src/assets/fonts/IBMPlexSans-Medium.ttf")
+  );
+
+  const fontMono = await readFile(
+    join(process.cwd(), "src/assets/fonts/IBMPlexMono-Medium.ttf")
   );
 
   return new ImageResponse(
     (
-      <div tw="w-full h-full flex items-center justify-center text-white bg-black p-16">
+      <div tw="flex h-full w-full flex-col justify-between bg-[#09090b] text-[#ffffff] p-16">
+        {/* Background elements */}
         <div tw="absolute flex inset-y-0 w-px border border-zinc-800 left-16" />
         <div tw="absolute flex inset-y-0 w-px border border-zinc-800 right-16" />
         <div tw="absolute flex inset-x-0 h-px border border-zinc-800 top-16" />
         <div tw="absolute flex inset-x-0 h-px border border-zinc-800 bottom-16" />
 
-        <div tw="absolute flex flex-col items-end bottom-16 right-16">
-          <svg
-            width={64}
-            height={32}
-            viewBox="0 0 512 256"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ color: "white", marginBottom: 8 }}
-          >
-            <rect
-              x="8"
-              y="8"
-              width="496"
-              height="240"
-              rx="24"
-              ry="24"
-              fill="currentColor"
-              opacity="0.08"
-            />
-            <text
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dominantBaseline="central"
-              fontFamily="RobotoCondensed"
-              fontWeight={700}
-              fontSize={160}
-              fill="currentColor"
-            >
-              S
-            </text>
-          </svg>
-          <span
-            style={{
-              fontFamily: "RobotoCondensed",
-              fontSize: 24,
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              color: "white",
-            }}
-          >
-            SHREYAS
-          </span>
+        {/* Top Header */}
+        <div
+          tw="flex w-full items-center justify-between z-10"
+          style={{ fontFamily: "IBMPlexMono" }}
+        >
+          <div tw="flex items-center text-2xl text-zinc-400">~/shreyas</div>
+          <div tw="flex items-center text-2xl text-zinc-400">2026</div>
         </div>
 
-        <h1
-          tw="text-center font-medium"
-          style={{
-            fontFamily: "RobotoCondensed",
-            fontSize: 64,
-          }}
+        {/* Center Content */}
+        <div tw="flex flex-col justify-center items-start z-10">
+          <h1
+            tw="text-8xl tracking-tight m-0"
+            style={{
+              fontFamily: "IBMPlexSans",
+              fontWeight: 500,
+            }}
+          >
+            {title}
+          </h1>
+          <p
+            tw="text-3xl text-zinc-400 mt-6 max-w-[80%]"
+            style={{ fontFamily: "IBMPlexSans" }}
+          >
+            Software engineer building products across AI, Web3, and modern web
+            technologies.
+          </p>
+        </div>
+
+        {/* Bottom Footer */}
+        <div
+          tw="flex w-full items-center justify-between z-10"
+          style={{ fontFamily: "IBMPlexMono" }}
         >
-          {title}
-        </h1>
+          <div tw="flex text-2xl text-zinc-500">shreyas.dev</div>
+        </div>
       </div>
     ),
     {
@@ -81,8 +68,13 @@ export async function GET(request: Request) {
       height: 630,
       fonts: [
         {
-          name: "RobotoCondensed",
-          data: robotoCondensedMedium,
+          name: "IBMPlexSans",
+          data: fontSans,
+          weight: 500,
+        },
+        {
+          name: "IBMPlexMono",
+          data: fontMono,
           weight: 500,
         },
       ],
