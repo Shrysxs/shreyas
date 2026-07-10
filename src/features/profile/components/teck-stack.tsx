@@ -47,7 +47,7 @@ export function TeckStack() {
           "bg-zinc-950/0.75 dark:bg-white/0.75"
         )}
       >
-        <ul className="flex flex-wrap gap-4 select-none">
+        <ul className="flex flex-wrap gap-2.5 select-none sm:gap-3">
           {TECH_STACK.map((tech) => {
             return (
               <li key={tech.key} className="flex">
@@ -57,12 +57,13 @@ export function TeckStack() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={tech.title}
+                    className="flex items-center justify-center rounded-lg p-1.5 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
                   >
                     <Image
                       src={tech.icon || getDeviconUrl(tech.key)}
                       alt={`${tech.title} icon`}
-                      width={32}
-                      height={32}
+                      width={24}
+                      height={24}
                       unoptimized
                       onError={(e) => {
                         if (tech.icon) return;
