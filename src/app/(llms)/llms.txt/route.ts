@@ -3,7 +3,7 @@ import { getAllPosts } from "@/features/blog/data/posts";
 
 const allPosts = getAllPosts();
 
-const content = `# shreyas.dev
+const content = `# shrysxs.vercel.app
 
 > A minimal portfolio, component registry, and blog to showcase my work as a Full Stack & Web3 Developer.
 

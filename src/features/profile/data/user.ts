@@ -19,7 +19,7 @@ export const USER: User = {
   address: "Pune, Maharashtra, India (open to relocation & remote)",
   phoneNumber: "", // intentionally empty to hide phone number
   email: "Y29udGFjdC5zaHJleWFzaGJvcmFkZUBnbWFpbC5jb20=", // base64 encoded (contact.shreyashborade@gmail.com)
-  website: "https://shreyas.dev",
+  website: "https://shrysxs.vercel.app",
   jobTitle: "Full Stack Developer · Web3 Developer · Smart Contract Developer",
   jobs: [],
   about: `Software engineer building products across AI, Web3, and modern web technologies.

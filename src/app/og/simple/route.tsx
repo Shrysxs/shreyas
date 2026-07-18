@@ -67,7 +67,7 @@ export async function GET(request: Request) {
           tw="flex w-full items-center justify-between z-10"
           style={{ fontFamily: "IBMPlexMono" }}
         >
-          <div tw="flex text-2xl text-zinc-500">shreyas.dev</div>
+          <div tw="flex text-2xl text-zinc-500">shrysxs.vercel.app</div>
         </div>
       </div>
     ),

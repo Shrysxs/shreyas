@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "shreyas.dev",
+        hostname: "shrysxs.vercel.app",
         port: "",
       },
     ],

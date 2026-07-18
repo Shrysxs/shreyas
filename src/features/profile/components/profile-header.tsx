@@ -19,24 +19,6 @@ export function ProfileHeader() {
             fetchPriority="high"
           />
         </div>
-
-        <SimpleTooltip content="I'm from India">
-          {/* Flag of India */}
-          <svg
-            className="absolute top-0 -left-px h-8 sm:h-9"
-            viewBox="0 0 30 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* White base */}
-            <rect width="30" height="20" fill="#FFFFFF" />
-            {/* Saffron band */}
-            <rect width="30" height="6.6667" y="0" fill="#FF9933" />
-            {/* Green band */}
-            <rect width="30" height="6.6667" y="13.3333" fill="#138808" />
-            {/* Ashoka Chakra (simplified) */}
-            <circle cx="15" cy="10" r="2" fill="#000080" />
-          </svg>
-        </SimpleTooltip>
       </div>
 
       <div className="flex flex-1 flex-col">

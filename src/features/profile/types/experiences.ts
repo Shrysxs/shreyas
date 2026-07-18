@@ -17,6 +17,8 @@ export type ExperiencePosition = {
   };
   /** Full-time | Part-time | Contract | Internship, etc. */
   employmentType?: string;
+  /** Location type label (e.g. "Remote", "On-site", "Hybrid"). */
+  locationType?: string;
   description?: string;
   /** UI icon to represent the role type. */
   icon?: ExperiencePositionIcon;

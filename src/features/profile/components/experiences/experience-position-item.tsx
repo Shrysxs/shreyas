@@ -90,6 +90,19 @@ export function ExperiencePositionItem({
                 )}
               </dd>
             </dl>
+
+            {position.locationType && (
+              <>
+                <Separator
+                  className="data-[orientation=vertical]:h-4"
+                  orientation="vertical"
+                />
+                <dl>
+                  <dt className="sr-only">Location Type</dt>
+                  <dd>{position.locationType}</dd>
+                </dl>
+              </>
+            )}
           </div>
         </CollapsibleTrigger>
 
