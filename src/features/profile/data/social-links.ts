@@ -2,7 +2,7 @@ import type { SocialLink } from "../types/social-links";
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    icon: "https://api.iconify.design/logos:linkedin-icon.svg",
+    icon: "https://api.iconify.design/logos/linkedin-icon.svg",
     title: "LinkedIn",
     description: "shrysxs",
     href: "https://www.linkedin.com/in/shrysxs",
@@ -12,12 +12,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
     title: "X (Formerly Twitter)",
     description: "@shrysxs",
     href: "https://x.com/shrysxs",
+    theme: true,
   },
   {
     icon: "https://cdn.simpleicons.org/github/181717",
     title: "GitHub",
     description: "shrysxs",
     href: "https://github.com/shrysxs",
+    theme: true,
   },
   {
     icon: "https://cdn.simpleicons.org/telegram/26A5E4",
@@ -36,5 +38,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     title: "Book a call",
     description: "cal.com/shrysxs",
     href: "https://cal.com/shrysxs",
+    theme: true,
   },
 ];

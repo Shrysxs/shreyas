@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
         hostname: "shrysxs.vercel.app",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "api.iconify.design",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
     ],
     qualities: [75, 100],
   },

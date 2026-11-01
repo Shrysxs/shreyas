@@ -4,7 +4,13 @@ import Image from "next/image";
 import type { SocialLink } from "@/features/profile/types/social-links";
 import { cn } from "@/lib/utils";
 
-export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
+export function SocialLinkItem({
+  icon,
+  title,
+  description,
+  href,
+  theme,
+}: SocialLink) {
   return (
     <a
       className={cn(
@@ -30,7 +36,7 @@ export function SocialLinkItem({ icon, title, description, href }: SocialLink) {
       </div> */}
 
       <Image
-        className="shrink-0"
+        className={cn("shrink-0", theme && "dark:invert")}
         src={icon}
         alt={title}
         width={48}

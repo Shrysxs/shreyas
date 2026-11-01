@@ -64,12 +64,17 @@ export function TeckStack() {
                       alt={`${tech.title} icon`}
                       width={24}
                       height={24}
+                      className={cn("size-6", tech.theme && "dark:invert")}
                       unoptimized
                       onError={(e) => {
-                        if (tech.icon) return;
-                        // Fallback to plain variant if original fails
                         const img = e.currentTarget;
-                        if (!img.src.includes("plain")) {
+                        const deviconUrl = getDeviconUrl(tech.key);
+                        if (
+                          img.src !== deviconUrl &&
+                          !img.src.includes("/icons/")
+                        ) {
+                          img.src = deviconUrl;
+                        } else if (!img.src.includes("plain")) {
                           img.src = getDeviconUrl(tech.key, false);
                         }
                       }}
