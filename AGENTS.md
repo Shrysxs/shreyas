@@ -77,15 +77,17 @@ ongoing roles/positions.
 
 ## 4b. Hackathons (chronological, newest first — can be its own timeline/section or merged into Work)
 
-1. **Monad Blitz Pune** — July 2026 — **Winner**
+1. **Monad Blitz Pune V3** — November 2026
+   Built Penguin Trace (cryptographic software integrity and provenance platform on Monad Testnet).
+2. **Monad Blitz Pune** — July 2026 — **Winner**
    Built Argus (evolved from the hackathon prototype, Penguin Protocol).
-2. **Colosseum Frontier** — May 2026
+3. **Colosseum Frontier** — May 2026
    Co-founded Nox Market (trading skill verification on Solana). Product has since pivoted.
-3. **Algorand Hack Series** — April 2026
+4. **Algorand Hack Series** — April 2026
    Built GhostGas (zero-fee Algorand transactions sponsored by ads) — repo: `algorand-protocol`.
-4. **AI Bhoomi Startup Weekend** — January 2026
+5. **AI Bhoomi Startup Weekend** — January 2026
    Built VoiceAds — an AI x Ads concept.
-5. **Colosseum Cypherpunk** — October 2025
+6. **Colosseum Cypherpunk** — October 2025
    Worked with Ceminted on privacy trading / dark pools on Solana.
 
 ## 5. Projects Section
