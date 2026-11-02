@@ -99,7 +99,21 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 1. Argus
+### 1. Penguin Trace
+- **Date:** 11.2026
+- **Live:** https://monad-v3-six.vercel.app
+- **Repo:** github.com/Shrysxs/monad-v3
+- **Contract:** https://testnet.monadscan.com/address/0xeB3Ef45368cf0A28679FC6F037295fC2607deF01
+- **Description:** Penguin Trace is a software integrity and provenance platform designed for
+  peer-to-peer file distribution. It combines SHA-256 file hashing, Ed25519-signed release manifests,
+  piece-level integrity verification, release history, and a Solidity-based publisher registry deployed
+  on Monad Testnet. Helps users verify whether a downloaded file matches its expected software release
+  and inspect the evidence behind its publisher authenticity and provenance.
+- **Tags:** Next.js, TypeScript, Solidity, Foundry, Monad Testnet, viem / wagmi, SHA-256, Ed25519
+
+---
+
+### 2. Argus
 - **Date:** 07.2026
 - **Live:** https://monad-blitz-pune-pi.vercel.app/
 - **Status:** In active development — evolved from hackathon prototype
@@ -111,7 +125,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 2. GhostGas (Penguin Protocol)
+### 3. GhostGas (Penguin Protocol)
 - **Date:** 04.2026
 - **Live:** https://algorand-protocol.vercel.app/
 - **Repo:** github.com/shrysxs/algorand-protocol (adjust if different)
@@ -127,7 +141,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 3. ReX
+### 4. ReX
 - **Date:** 08.2025
 - **Live:** https://rex-gilt.vercel.app/
 - **Description:** Terminal-styled regex playground with instant highlighting, capture
@@ -138,7 +152,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 4. Replyfy
+### 5. Replyfy
 - **Date:** 07.2025
 - **Live:** https://replyify-five.vercel.app/
 - **Description:** AI-powered text generation tool that transforms rough ideas into
@@ -150,7 +164,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 5. Peakfok
+### 6. Peakfok
 - **Date:** 06.2025
 - **Description:** Modern social platform to plan trips, share posts, chat, and stay
   connected offline (PWA). Built with Next.js 15 App Router and TypeScript for strict
@@ -161,7 +175,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 6. VoiceAds
+### 7. VoiceAds
 - **Date:** 01.2026 (AI Bhoomi Startup Weekend)
 - **Live:** https://voiceads.vercel.app/
 - **Description:** Most businesses collect large volumes of customer reviews, yet this

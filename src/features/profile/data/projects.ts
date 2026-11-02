@@ -2,6 +2,36 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
+    id: "penguin-trace",
+    title: "Penguin Trace",
+    tagline:
+      "Cryptographic software integrity and release provenance platform.",
+    period: {
+      start: "11.2026",
+    },
+    link: "https://monad-v3-six.vercel.app",
+    repo: "https://github.com/Shrysxs/monad-v3",
+    contract:
+      "https://testnet.monadscan.com/address/0xeB3Ef45368cf0A28679FC6F037295fC2607deF01",
+    skills: [
+      "Next.js",
+      "TypeScript",
+      "Solidity",
+      "Foundry",
+      "Monad Testnet",
+      "viem / wagmi",
+      "SHA-256",
+      "Ed25519",
+    ],
+    shortDescription:
+      "A peer-to-peer software provenance platform with client-side SHA-256 hashing, Ed25519 manifests, and an immutable Monad registry.",
+    description: `Penguin Trace is a software integrity and provenance platform designed for peer-to-peer file distribution. It combines SHA-256 file hashing, Ed25519-signed release manifests, piece-level integrity verification, release history, and a Solidity-based publisher registry deployed on Monad Testnet.
+
+It helps users verify whether a downloaded file matches its expected software release and inspect the evidence behind its publisher authenticity and provenance.`,
+    logo: "/images/projects/penguin-trace.svg",
+    isExpanded: true,
+  },
+  {
     id: "argus",
     title: "Argus",
     tagline: "Decentralized AI investment syndicate.",

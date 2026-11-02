@@ -18,6 +18,8 @@ export type Project = {
   link: string;
   /** Optional GitHub / Repository link. */
   repo?: string;
+  /** Optional Smart Contract Explorer link. */
+  contract?: string;
   /** Tags/technologies for chips or filtering. */
   skills: string[];
   /** Long rich description; Markdown and line breaks supported (expanded detail view). */

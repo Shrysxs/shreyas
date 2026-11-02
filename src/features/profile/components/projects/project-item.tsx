@@ -1,4 +1,9 @@
-import { ChevronsDownUpIcon, ChevronsUpDownIcon, LinkIcon } from "lucide-react";
+import {
+  ChevronsDownUpIcon,
+  ChevronsUpDownIcon,
+  FileCodeIcon,
+  LinkIcon,
+} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -123,6 +128,20 @@ export function ProjectItem({
                   >
                     <Icons.github className="size-3.5" />
                     GitHub
+                  </a>
+                </SimpleTooltip>
+              )}
+
+              {project.contract && (
+                <SimpleTooltip content="Smart Contract on MonadScan">
+                  <a
+                    className="flex items-center gap-1.5 font-mono text-xs link text-muted-foreground hover:text-foreground"
+                    href={project.contract}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FileCodeIcon className="size-3.5" />
+                    Contract Explorer
                   </a>
                 </SimpleTooltip>
               )}

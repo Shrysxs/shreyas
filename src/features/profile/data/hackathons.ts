@@ -1,51 +1,22 @@
-export type HackathonLink = {
-  label: string;
-  href: string;
-};
-
 export type Hackathon = {
   id: string;
   name: string;
-  project?: string;
   date: string;
-  location?: string;
-  category?: string;
   result?: string;
   description: string;
   skills?: string[];
   repo?: string;
-  demo?: string;
-  contract?: string;
-  links?: HackathonLink[];
-  logo?: string;
 };
 
 export const HACKATHONS: Hackathon[] = [
   {
     id: "monad-blitz-pune-v3",
     name: "Monad Blitz Pune V3",
-    project: "Penguin Trace",
-    category: "Web3 / Blockchain / Security",
     date: "November 2026",
-    location: "Pune, India",
-    logo: "/images/hackathons/penguin-trace.svg",
-    description: `Penguin Trace is a software integrity and provenance platform designed for peer-to-peer file distribution. It combines SHA-256 file hashing, Ed25519-signed release manifests, piece-level integrity verification, release history, and a Solidity-based publisher registry deployed on Monad Testnet.
-
-It helps users verify whether a downloaded file matches its expected software release and inspect the evidence behind its publisher authenticity and provenance.`,
-    skills: [
-      "Next.js",
-      "TypeScript",
-      "Solidity",
-      "Foundry",
-      "Monad Testnet",
-      "viem / wagmi",
-      "SHA-256",
-      "Ed25519",
-    ],
-    demo: "https://monad-v3-six.vercel.app",
+    description:
+      "Built Penguin Trace (cryptographic software integrity and provenance platform on Monad Testnet).",
+    skills: ["Monad Testnet", "Solidity", "Foundry", "SHA-256", "Ed25519"],
     repo: "https://github.com/Shrysxs/monad-v3",
-    contract:
-      "https://testnet.monadscan.com/address/0xeB3Ef45368cf0A28679FC6F037295fC2607deF01",
   },
   {
     id: "monad-blitz-pune",
