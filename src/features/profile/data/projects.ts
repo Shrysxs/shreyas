@@ -28,7 +28,6 @@ export const PROJECTS: Project[] = [
     description: `Penguin Trace is a software integrity and provenance platform designed for peer-to-peer file distribution. It combines SHA-256 file hashing, Ed25519-signed release manifests, piece-level integrity verification, release history, and a Solidity-based publisher registry deployed on Monad Testnet.
 
 It helps users verify whether a downloaded file matches its expected software release and inspect the evidence behind its publisher authenticity and provenance.`,
-    logo: "/images/projects/penguin-trace.svg",
     isExpanded: true,
   },
   {

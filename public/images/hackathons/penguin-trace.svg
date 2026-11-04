@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#09090b"/>
-  <path d="M32 14L47 21.5V34C47 43.5 40.5 50.5 32 53.5C23.5 50.5 17 43.5 17 34V21.5L32 14Z" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="#09090b"/>
-  <text x="32" y="38.5" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">PT</text>
-</svg>
