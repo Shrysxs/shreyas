@@ -22,11 +22,13 @@ export const USER: User = {
   website: "https://shrysxs.vercel.app",
   jobTitle: "Full Stack Developer · Web3 Developer · Smart Contract Developer",
   jobs: [],
-  about: `I'm Shreyas, a software engineer in Pune building products across AI, Web3 and the modern web. I work mostly in TypeScript, React and Next.js, and I like problems that sit where engineering, product design and user experience meet.
+  about: `I'm Shreyas, a full-stack and Web3 engineer based in Pune. I work mostly in TypeScript: Next.js and React on the frontend, Node and Python services behind them, and smart contracts in Solidity and AlgoPy, with some Rust on Solana. I also build LLM features into products where they actually help.
 
-Right now I work as a freelance full-stack developer and I'm co-founding Nox Market, a trading-skill verification platform on Solana. A lot of what I ship starts at hackathons: I won Monad Blitz Pune with the prototype that became Argus, built the API and accounting layer for Nony.money at ETHGlobal Mumbai, and have built on Ethereum, Solana, Algorand and Monad.
+The problems I keep coming back to are about trust: proving a downloaded file is what it claims to be, keeping a ledger correct as money moves through it, making an AI's decision auditable, or keeping a trade private. I like owning a system end to end, from the data model and API to the contract and the interface people use.
 
-Outside of code, I'm interested in distributed systems, physics, history and emerging technologies.`,
+I'm open to full-time roles, freelance work and early-stage teams, remote or with relocation, especially in Web3, AI or developer tools.
+
+Outside of code, I spend most of my time in a Linux terminal and read about distributed systems, physics and history.`,
   avatar: "/avatar.jpg",
   ogImage: "/og/simple?title=Shreyas",
   namePronunciationUrl: "",
