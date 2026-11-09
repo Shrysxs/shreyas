@@ -37,9 +37,8 @@ function BrandMarkMotion() {
   }, []);
 
   return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 256"
+    <motion.div
+      className="flex"
       initial={{ opacity: 0, transform: "translateY(8px)" }}
       animate={{
         opacity: visible ? 1 : 0,
@@ -47,29 +46,8 @@ function BrandMarkMotion() {
       }}
       transition={{ duration: 0.3 }}
     >
-      <rect
-        x="8"
-        y="8"
-        width="496"
-        height="240"
-        rx="24"
-        ry="24"
-        fill="currentColor"
-        opacity="0.08"
-      />
-      <text
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="central"
-        fontFamily="inherit"
-        fontWeight={700}
-        fontSize={160}
-        fill="currentColor"
-      >
-        S
-      </text>
-    </motion.svg>
+      <BrandMark />
+    </motion.div>
   );
 }
 

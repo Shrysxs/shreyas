@@ -22,28 +22,19 @@ export function SocialLinkItem({
       target="_blank"
       rel="noopener"
     >
-      {/* <div className="relative size-12 shrink-0">
+      <div
+        className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-muted dark:inset-shadow-[1px_1px_1px,0px_0px_2px] dark:inset-shadow-white/15"
+        aria-hidden
+      >
         <Image
-          className="rounded-xl"
+          className={cn("size-6", theme && "dark:invert")}
           src={icon}
-          alt={title}
-          width={48}
-          height={48}
-          quality={100}
+          alt=""
+          width={24}
+          height={24}
           unoptimized
         />
-        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-black/8 ring-inset dark:ring-white/8" />
-      </div> */}
-
-      <Image
-        className={cn("shrink-0", theme && "dark:invert")}
-        src={icon}
-        alt={title}
-        width={48}
-        height={48}
-        quality={100}
-        unoptimized
-      />
+      </div>
 
       <div className="flex-1">
         <h3 className="flex items-center font-medium underline-offset-4 group-hover/link:underline">
@@ -55,7 +46,7 @@ export function SocialLinkItem({
         )}
       </div>
 
-      <ArrowUpRightIcon className="size-4 text-muted-foreground" />
+      <ArrowUpRightIcon className="size-4 text-muted-foreground transition-colors group-hover/link:text-foreground" />
     </a>
   );
 }

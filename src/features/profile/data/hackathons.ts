@@ -12,7 +12,7 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "ethglobal-mumbai",
     name: "ETHGlobal Mumbai",
-    date: "November 2026",
+    date: "11.2026",
     description:
       "Built Cloakroom (now Nony.money) in a team of four: a privacy-preserving intent execution system where a TEE holds custody keys and a private ledger. Owned the API and accounting layer — EIP-712 authenticated endpoints, shared protocol contracts, the journal and ledger, balance reservations, and the intent lifecycle.",
     skills: ["EIP-712", "Fastify", "TEE", "Uniswap", "Ethereum"],
@@ -21,7 +21,7 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "monad-blitz-pune-v3",
     name: "Monad Blitz Pune V3",
-    date: "October 2026",
+    date: "10.2026",
     description:
       "Built Penguin Trace (cryptographic software integrity and provenance platform on Monad Testnet).",
     skills: ["Monad Testnet", "Solidity", "Foundry", "SHA-256", "Ed25519"],
@@ -30,7 +30,7 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "monad-blitz-pune",
     name: "Monad Blitz Pune",
-    date: "July 2026",
+    date: "07.2026",
     result: "Winner",
     description:
       "Built Argus (evolved from the hackathon prototype, Penguin Protocol).",
@@ -39,7 +39,7 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "colosseum-frontier",
     name: "Colosseum Frontier",
-    date: "May 2026",
+    date: "05.2026",
     description:
       "Co-founded Nox Market (trading skill verification on Solana). Product has since pivoted.",
     skills: ["Solana", "Rust", "Trading Skills Verification"],
@@ -47,7 +47,7 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "algorand-hack-series",
     name: "Algorand Hack Series",
-    date: "April 2026",
+    date: "04.2026",
     description:
       "Built GhostGas (zero-fee Algorand transactions sponsored by ads).",
     skills: ["Algorand", "Smart Contracts", "ARC4", "Ad-supported Gas"],
@@ -56,14 +56,14 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "ai-bhoomi-startup-weekend",
     name: "AI Bhoomi Startup Weekend",
-    date: "January 2026",
+    date: "01.2026",
     description: "Built VoiceAds — an AI x Ads concept.",
     skills: ["AI", "LLMs", "Marketing Tech"],
   },
   {
     id: "colosseum-cypherpunk",
     name: "Colosseum Cypherpunk",
-    date: "October 2025",
+    date: "10.2025",
     description:
       "Worked with Ceminted on privacy trading / dark pools on Solana.",
     skills: ["Solana", "Privacy Trading", "Dark Pools", "Web3"],

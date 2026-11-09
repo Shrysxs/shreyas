@@ -19,7 +19,7 @@ export function Hackathons() {
             {/* Timeline dot/icon */}
             <div className="absolute top-1 left-4 z-1 flex size-6 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-colors group-hover/hackathon:border-foreground group-hover/hackathon:text-foreground">
               {hackathon.result === "Winner" ? (
-                <TrophyIcon className="size-3.5 fill-yellow-500/10 text-yellow-500" />
+                <TrophyIcon className="size-3.5 text-foreground" />
               ) : (
                 <span className="size-1.5 rounded-full bg-muted-foreground transition-colors group-hover/hackathon:bg-foreground" />
               )}
@@ -28,12 +28,10 @@ export function Hackathons() {
             <div className="space-y-1.5">
               <div className="flex flex-wrap items-baseline justify-between gap-x-2">
                 <div className="flex items-center gap-2">
-                  <h3 className="text-base leading-snug font-semibold">
-                    {hackathon.name}
-                  </h3>
+                  <h3 className="leading-snug font-medium">{hackathon.name}</h3>
                   {hackathon.result && (
-                    <span className="inline-flex items-center gap-1 rounded bg-yellow-500/10 px-1.5 py-0.5 font-mono text-xs font-medium text-yellow-600 dark:text-yellow-400">
-                      🏆 {hackathon.result}
+                    <span className="inline-flex items-center rounded-md border px-1.5 py-0.5 font-mono text-xs font-medium text-foreground">
+                      {hackathon.result}
                     </span>
                   )}
                 </div>

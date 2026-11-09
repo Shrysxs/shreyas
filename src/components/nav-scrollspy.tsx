@@ -18,7 +18,11 @@ export function NavScrollspy({
   const activeItemId = useActiveItem(itemIds, shouldObserve);
 
   return (
-    <Nav className={className} items={items} activeId={`#${activeItemId}`} />
+    <Nav
+      className={className}
+      items={items}
+      activeId={activeItemId ? `/#${activeItemId}` : null}
+    />
   );
 }
 

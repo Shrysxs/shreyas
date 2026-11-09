@@ -1,18 +1,10 @@
-import { RssIcon } from "lucide-react";
-
 import { SITE_INFO } from "@/config/site";
 import { cn } from "@/lib/utils";
-
-import { Icons } from "./icons";
 
 export function SiteFooter() {
   return (
     <footer className="max-w-screen overflow-x-hidden px-2">
       <div className="screen-line-before mx-auto border-x border-edge pt-4 md:max-w-3xl">
-        <p className="mb-1 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
-          Inspired by tailwindcss.com &amp; ui.shadcn.com
-        </p>
-
         <p className="mb-1 px-4 text-center font-mono text-sm text-balance text-muted-foreground">
           Built by{" "}
           <a
@@ -47,39 +39,12 @@ export function SiteFooter() {
         >
           <div className="mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4">
             <a
-              className="flex font-mono text-xs font-medium text-muted-foreground"
+              className="flex h-11 items-center font-mono text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
               href={`${SITE_INFO.url}/llms.txt`}
               target="_blank"
               rel="noopener noreferrer"
             >
               llms.txt
-            </a>
-
-            <Separator />
-
-            <a
-              className="flex items-center text-muted-foreground transition-colors hover:text-foreground"
-              href={`${SITE_INFO.url}/rss`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <RssIcon className="size-4" />
-              <span className="sr-only">RSS</span>
-            </a>
-
-            <Separator />
-
-            <a
-              className="flex text-muted-foreground transition-colors hover:text-foreground"
-              href={
-                process.env.NEXT_PUBLIC_DMCA_URL ||
-                "https://www.dmca.com/ProtectionPro.aspx"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icons.dmca className="h-5 w-auto" />
-              <span className="sr-only">DMCA.com Protection Status</span>
             </a>
           </div>
         </div>
@@ -89,8 +54,4 @@ export function SiteFooter() {
       </div>
     </footer>
   );
-}
-
-function Separator() {
-  return <div className="flex h-11 w-px bg-edge" />;
 }

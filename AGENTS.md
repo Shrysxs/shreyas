@@ -164,7 +164,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 6. Peakfok
+### 6. Peakfolk
 - **Date:** 06.2025
 - **Description:** Modern social platform to plan trips, share posts, chat, and stay
   connected offline (PWA). Built with Next.js 15 App Router and TypeScript for strict

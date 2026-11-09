@@ -57,14 +57,17 @@ export function TeckStack() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={tech.title}
-                    className="flex items-center justify-center rounded-lg p-1.5 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
+                    className="group/tech flex items-center justify-center rounded-lg p-1.5 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
                   >
                     <Image
                       src={tech.icon || getDeviconUrl(tech.key)}
                       alt={`${tech.title} icon`}
                       width={24}
                       height={24}
-                      className={cn("size-6", tech.theme && "dark:invert")}
+                      className={cn(
+                        "size-6 grayscale transition-[filter] duration-300 group-hover/tech:grayscale-0 group-focus-visible/tech:grayscale-0",
+                        tech.theme && "dark:invert"
+                      )}
                       unoptimized
                       onError={(e) => {
                         const img = e.currentTarget;

@@ -127,13 +127,6 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Library"],
   },
   {
-    key: "react-navigation",
-    title: "React Navigation",
-    icon: "https://api.iconify.design/logos/react.svg",
-    href: "https://reactnavigation.org/",
-    categories: ["Library"],
-  },
-  {
     key: "git",
     title: "Git",
     icon: "https://api.iconify.design/logos/git-icon.svg",

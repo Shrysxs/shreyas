@@ -166,13 +166,14 @@ It helps users verify whether a downloaded file matches its expected software re
     isExpanded: true,
   },
   {
-    id: "peakfok",
-    title: "Peakfok",
+    id: "peakfolk",
+    title: "Peakfolk",
     tagline: "Modern social platform for trip planning and offline connection.",
     period: {
       start: "06.2025",
     },
-    link: "https://rex-gilt.vercel.app/", // Live link placeholder if not given (we will omit it or use GitHub if no live link is specified)
+    link: "https://peakfolksocial.vercel.app",
+    repo: "https://github.com/Shrysxs/peakfolksocial",
     skills: [
       "Next.js 15",
       "TypeScript",
