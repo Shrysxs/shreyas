@@ -77,7 +77,7 @@ ongoing roles/positions.
 
 ## 4b. Hackathons (chronological, newest first — can be its own timeline/section or merged into Work)
 
-1. **Monad Blitz Pune V3** — November 2026
+1. **Monad Blitz Pune V3** — October 2026
    Built Penguin Trace (cryptographic software integrity and provenance platform on Monad Testnet).
 2. **Monad Blitz Pune** — July 2026 — **Winner**
    Built Argus (evolved from the hackathon prototype, Penguin Protocol).
@@ -100,7 +100,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 ---
 
 ### 1. Penguin Trace
-- **Date:** 11.2026
+- **Date:** 10.2026
 - **Live:** https://monad-v3-six.vercel.app
 - **Repo:** github.com/Shrysxs/monad-v3
 - **Contract:** https://testnet.monadscan.com/address/0xeB3Ef45368cf0A28679FC6F037295fC2607deF01

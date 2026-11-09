@@ -33,7 +33,7 @@ Built as Cloakroom by a four-person team at ETHGlobal Mumbai. I owned the API an
     tagline:
       "Cryptographic software integrity and release provenance platform.",
     period: {
-      start: "11.2026",
+      start: "10.2026",
     },
     link: "https://monad-v3-six.vercel.app",
     repo: "https://github.com/Shrysxs/monad-v3",

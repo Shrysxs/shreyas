@@ -21,7 +21,7 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "monad-blitz-pune-v3",
     name: "Monad Blitz Pune V3",
-    date: "November 2026",
+    date: "October 2026",
     description:
       "Built Penguin Trace (cryptographic software integrity and provenance platform on Monad Testnet).",
     skills: ["Monad Testnet", "Solidity", "Foundry", "SHA-256", "Ed25519"],
