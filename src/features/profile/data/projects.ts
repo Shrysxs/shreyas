@@ -2,6 +2,32 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
+    id: "nony-money",
+    title: "Nony.money",
+    tagline: "Private swaps and withdrawals on Ethereum, run from a TEE.",
+    period: {
+      start: "11.2026",
+    },
+    link: "https://nony.money",
+    repo: "https://github.com/Apurvborhade/nony-money",
+    skills: [
+      "TypeScript",
+      "Fastify",
+      "EIP-712",
+      "viem",
+      "Zod",
+      "AWS Nitro (TEE)",
+      "Uniswap Trading API",
+      "Ethereum Sepolia",
+    ],
+    shortDescription:
+      "Deposit ETH, swap on price conditions through Uniswap, and withdraw to a fresh wallet, paid from pooled custody addresses so nothing on-chain links the two.",
+    description: `Sending ETH to a new wallet links the two addresses, and privacy-pool contracts are themselves visible on-chain. Nony.money avoids both: users deposit to a custody address, and their balance becomes a private entry in a ledger held inside a trusted execution environment. Swaps and withdrawals leave from a different address in the pool, so on-chain they look like ordinary transfers and Uniswap swaps. Limit orders stay inside the enclave until a price check meets them. Trust rests on the TEE hardware and a single operator rather than zero-knowledge proofs. Running on Sepolia.
+
+Built as Cloakroom by a four-person team at ETHGlobal Mumbai. I owned the API and accounting layer: the API routes and shared protocol types, EIP-712 signed requests and session auth, the encrypted hash-chained journal, ledger balance reservations, and the intent lifecycle and execution pipeline. Teammates owned TEE custody, on-chain execution, and the frontend.`,
+    isExpanded: true,
+  },
+  {
     id: "penguin-trace",
     title: "Penguin Trace",
     tagline:

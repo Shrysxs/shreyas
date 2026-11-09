@@ -10,6 +10,15 @@ export type Hackathon = {
 
 export const HACKATHONS: Hackathon[] = [
   {
+    id: "ethglobal-mumbai",
+    name: "ETHGlobal Mumbai",
+    date: "November 2026",
+    description:
+      "Built Cloakroom (now Nony.money) in a team of four: a privacy-preserving intent execution system where a TEE holds custody keys and a private ledger. Owned the API and accounting layer — EIP-712 authenticated endpoints, shared protocol contracts, the journal and ledger, balance reservations, and the intent lifecycle.",
+    skills: ["EIP-712", "Fastify", "TEE", "Uniswap", "Ethereum"],
+    repo: "https://github.com/Apurvborhade/nony-money",
+  },
+  {
     id: "monad-blitz-pune-v3",
     name: "Monad Blitz Pune V3",
     date: "November 2026",
