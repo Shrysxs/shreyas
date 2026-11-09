@@ -115,7 +115,8 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ### 2. Argus
 - **Date:** 07.2026
-- **Live:** https://monad-blitz-pune-pi.vercel.app/
+- **Live:** https://argus-web-beta.vercel.app (hackathon prototype: https://monad-blitz-pune-pi.vercel.app)
+- **Repo:** github.com/Shrysxs/Argus
 - **Status:** In active development — evolved from hackathon prototype
 - **Description:** A decentralized AI investment syndicate. Originated as Penguin Protocol,
   built solo at Monad Blitz Pune (won the hackathon). Now being rebuilt chain-agnostic with
@@ -125,7 +126,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 3. GhostGas (Penguin Protocol)
+### 3. GhostGas
 - **Date:** 04.2026
 - **Live:** https://algorand-protocol.vercel.app/
 - **Repo:** github.com/shrysxs/algorand-protocol (adjust if different)
@@ -152,7 +153,7 @@ project detail view/expanded card; use a trimmed 1-2 line version for the compac
 
 ---
 
-### 5. Replyfy
+### 5. Replyify
 - **Date:** 07.2025
 - **Live:** https://replyify-five.vercel.app/
 - **Description:** AI-powered text generation tool that transforms rough ideas into

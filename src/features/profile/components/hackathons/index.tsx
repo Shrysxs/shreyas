@@ -1,7 +1,9 @@
 import { LinkIcon, TrophyIcon } from "lucide-react";
 import React from "react";
 
+import { Icons } from "@/components/icons";
 import { Tag } from "@/components/ui/tag";
+import { urlToName } from "@/utils/url";
 
 import { HACKATHONS } from "../../data/hackathons";
 import { Panel, PanelHeader, PanelTitle } from "../panel";
@@ -44,17 +46,31 @@ export function Hackathons() {
                 {hackathon.description}
               </p>
 
-              {hackathon.repo && (
-                <div className="pt-1">
-                  <a
-                    href={hackathon.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-mono text-xs link text-muted-foreground hover:text-foreground"
-                  >
-                    <LinkIcon className="size-3" />
-                    repo: {hackathon.repo.replace("https://github.com/", "")}
-                  </a>
+              {(hackathon.link || hackathon.repo) && (
+                <div className="flex flex-wrap gap-x-4 gap-y-1 pt-1">
+                  {hackathon.link && (
+                    <a
+                      href={hackathon.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-mono text-xs link text-muted-foreground hover:text-foreground"
+                    >
+                      <LinkIcon className="size-3" />
+                      live: {urlToName(hackathon.link)}
+                    </a>
+                  )}
+
+                  {hackathon.repo && (
+                    <a
+                      href={hackathon.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 font-mono text-xs link text-muted-foreground hover:text-foreground"
+                    >
+                      <Icons.github className="size-3" />
+                      repo: {hackathon.repo.replace("https://github.com/", "")}
+                    </a>
+                  )}
                 </div>
               )}
 
