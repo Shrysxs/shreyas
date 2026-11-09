@@ -19,11 +19,11 @@ export function Hackathons() {
         {HACKATHONS.map((hackathon) => (
           <div key={hackathon.id} className="group/hackathon relative pl-9">
             {/* Timeline dot/icon */}
-            <div className="absolute top-1 left-4 z-1 flex size-6 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-colors group-hover/hackathon:border-foreground group-hover/hackathon:text-foreground">
+            <div className="absolute top-1 left-4 z-1 flex size-6 -translate-x-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-colors group-hover/hackathon:border-brand group-hover/hackathon:text-foreground">
               {hackathon.result === "Winner" ? (
-                <TrophyIcon className="size-3.5 text-foreground" />
+                <TrophyIcon className="size-3.5 text-brand" />
               ) : (
-                <span className="size-1.5 rounded-full bg-muted-foreground transition-colors group-hover/hackathon:bg-foreground" />
+                <span className="size-1.5 rounded-full bg-muted-foreground transition-colors group-hover/hackathon:bg-brand" />
               )}
             </div>
 
@@ -32,7 +32,7 @@ export function Hackathons() {
                 <div className="flex items-center gap-2">
                   <h3 className="leading-snug font-medium">{hackathon.name}</h3>
                   {hackathon.result && (
-                    <span className="inline-flex items-center rounded-md border px-1.5 py-0.5 font-mono text-xs font-medium text-foreground">
+                    <span className="inline-flex items-center rounded-md border border-brand/40 bg-brand/10 px-1.5 py-0.5 font-mono text-xs font-medium text-foreground">
                       {hackathon.result}
                     </span>
                   )}

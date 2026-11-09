@@ -37,7 +37,7 @@ export function SocialLinkItem({
       </div>
 
       <div className="flex-1">
-        <h3 className="flex items-center font-medium underline-offset-4 group-hover/link:underline">
+        <h3 className="flex items-center font-medium decoration-brand underline-offset-4 group-hover/link:underline">
           {title}
         </h3>
 

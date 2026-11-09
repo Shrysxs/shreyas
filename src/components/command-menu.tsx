@@ -4,18 +4,21 @@ import { useCommandState } from "cmdk";
 import type { LucideProps } from "lucide-react";
 import {
   BriefcaseBusinessIcon,
-  CircleUserIcon,
+  CalendarIcon,
+  CopyIcon,
   CornerDownLeftIcon,
+  LayersIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
+  SquareTerminalIcon,
   SunIcon,
-  TextIcon,
+  TrophyIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback } from "react";
+import { toast } from "sonner";
 
 import {
   CommandDialog,
@@ -26,13 +29,14 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import type { Post } from "@/features/blog/types/post";
+import { PROJECTS } from "@/features/profile/data/projects";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
+import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
+import { copyText } from "@/utils/copy";
+import { decodeEmail } from "@/utils/string";
 
-import { BrandMark } from "./brand-mark";
 import { Icons } from "./icons";
-import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
 type CommandLinkItem = {
@@ -41,38 +45,16 @@ type CommandLinkItem = {
 
   icon?: React.ComponentType<LucideProps>;
   iconImage?: string;
+  iconInvert?: boolean;
   keywords?: string[];
   openInNewTab?: boolean;
 };
 
-const MENU_LINKS: CommandLinkItem[] = [
-  {
-    title: "Potfolio",
-    href: "/",
-    icon: BrandMark,
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: RssIcon,
-  },
-  {
-    title: "Components",
-    href: "/components",
-    icon: Icons.react,
-  },
-];
-
-const DAIFOLIO_LINKS: CommandLinkItem[] = [
+const SECTION_LINKS: CommandLinkItem[] = [
   {
     title: "About",
     href: "/#about",
     icon: LetterTextIcon,
-  },
-  {
-    title: "Tech Stack",
-    href: "/#stack",
-    icon: Icons.ts,
   },
   {
     title: "Experience",
@@ -80,71 +62,53 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
     icon: BriefcaseBusinessIcon,
   },
   {
+    title: "Hackathons",
+    href: "/#hackathons",
+    icon: TrophyIcon,
+  },
+  {
+    title: "Stack",
+    href: "/#stack",
+    icon: LayersIcon,
+  },
+  {
     title: "Projects",
     href: "/#projects",
     icon: Icons.project,
   },
-  {
-    title: "Honors & Awards",
-    href: "/#awards",
-    icon: Icons.award,
-  },
-  {
-    title: "Certifications",
-    href: "/#certs",
-    icon: Icons.certificate,
-  },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    icon: CircleUserIcon,
-  },
 ];
+
+const PROJECT_LINKS: CommandLinkItem[] = PROJECTS.map((project) => ({
+  title: project.title,
+  href: project.link,
+  keywords: [project.tagline, ...project.skills],
+  openInNewTab: true,
+}));
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   title: item.title,
   href: item.href,
   iconImage: item.icon,
+  iconInvert: item.theme,
   openInNewTab: true,
 }));
 
-export function CommandMenu({ posts }: { posts: Post[] }) {
+export function CommandMenu({
+  open,
+  onOpenChange,
+  onOpenTerminal,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onOpenTerminal: () => void;
+}) {
   const router = useRouter();
 
   const { setTheme } = useTheme();
 
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const abortController = new AbortController();
-    const { signal } = abortController;
-
-    document.addEventListener(
-      "keydown",
-      (e: KeyboardEvent) => {
-        if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
-          if (
-            (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-            e.target instanceof HTMLInputElement ||
-            e.target instanceof HTMLTextAreaElement ||
-            e.target instanceof HTMLSelectElement
-          ) {
-            return;
-          }
-
-          e.preventDefault();
-          setOpen((open) => !open);
-        }
-      },
-      { signal }
-    );
-
-    return () => abortController.abort();
-  }, []);
-
   const handleOpenLink = useCallback(
     (href: string, openInNewTab = false) => {
-      setOpen(false);
+      onOpenChange(false);
 
       if (openInNewTab) {
         window.open(href, "_blank", "noopener");
@@ -152,141 +116,105 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
         router.push(href);
       }
     },
-    [router]
+    [router, onOpenChange]
   );
 
   const handleThemeChange = useCallback(
     (theme: "light" | "dark" | "system") => {
-      setOpen(false);
+      onOpenChange(false);
       setTheme(theme);
     },
-    [setTheme]
+    [setTheme, onOpenChange]
   );
 
-  const { blogLinks, componentLinks } = useMemo(
-    () => ({
-      blogLinks: posts
-        .filter((post) => post.metadata?.category !== "components")
-        .map(postToCommandLinkItem),
-      componentLinks: posts
-        .filter((post) => post.metadata?.category === "components")
-        .map(postToCommandLinkItem),
-    }),
-    [posts]
-  );
+  const handleCopyEmail = useCallback(async () => {
+    onOpenChange(false);
+    await copyText(decodeEmail(USER.email));
+    toast.success("Email copied");
+  }, [onOpenChange]);
 
   return (
-    <>
-      <Button
-        variant="secondary"
-        className={cn(
-          "h-8 gap-1.5 rounded-full bg-zinc-50 px-2.5 text-muted-foreground select-none hover:bg-zinc-50 dark:bg-zinc-900 dark:hover:bg-zinc-900",
-          "not-dark:border dark:inset-shadow-[1px_1px_1px,0px_0px_2px] dark:inset-shadow-white/15"
-        )}
-        onClick={() => setOpen(true)}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 16 16"
-          aria-hidden
-        >
-          <path
-            d="M10.278 11.514a5.824 5.824 0 1 1 1.235-1.235l3.209 3.208A.875.875 0 0 1 14.111 15a.875.875 0 0 1-.624-.278l-3.209-3.208Zm.623-4.69a4.077 4.077 0 1 1-8.154 0 4.077 4.077 0 0 1 8.154 0Z"
-            fill="currentColor"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          />
-        </svg>
+    <CommandDialog open={open} onOpenChange={onOpenChange}>
+      <CommandInput placeholder="Type a command or search..." />
 
-        <span className="font-sans text-sm/4 font-medium sm:hidden">
-          Search
-        </span>
+      <CommandList className="min-h-80">
+        <CommandEmpty>No results found.</CommandEmpty>
 
-        <CommandMenuKbd className="hidden tracking-wider sm:in-[.os-macos_&]:flex">
-          ⌘K
-        </CommandMenuKbd>
-        <CommandMenuKbd className="hidden sm:not-[.os-macos_&]:flex">
-          Ctrl K
-        </CommandMenuKbd>
-      </Button>
+        <CommandGroup heading="Actions">
+          <CommandItem onSelect={handleCopyEmail}>
+            <CopyIcon />
+            Copy Email
+          </CommandItem>
+          <CommandItem
+            keywords={["cli", "shell", "console"]}
+            onSelect={() => onOpenTerminal()}
+          >
+            <SquareTerminalIcon />
+            Open Terminal
+          </CommandItem>
+          <CommandItem
+            keywords={["call", "meeting", "hire", "contact"]}
+            onSelect={() => handleOpenLink("https://cal.com/shrysxs", true)}
+          >
+            <CalendarIcon />
+            Book a Call
+          </CommandItem>
+        </CommandGroup>
 
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandSeparator />
 
-        <CommandList className="min-h-80">
-          <CommandEmpty>No results found.</CommandEmpty>
+        <CommandLinkGroup
+          heading="Portfolio"
+          links={SECTION_LINKS}
+          onLinkSelect={handleOpenLink}
+        />
 
-          <CommandLinkGroup
-            heading="Menu"
-            links={MENU_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
+        <CommandSeparator />
 
-          <CommandSeparator />
+        <CommandLinkGroup
+          heading="Projects"
+          links={PROJECT_LINKS}
+          fallbackIcon={Icons.project}
+          onLinkSelect={handleOpenLink}
+        />
 
-          <CommandLinkGroup
-            heading="Potfolio"
-            links={DAIFOLIO_LINKS}
-            onLinkSelect={handleOpenLink}
-          />
+        <CommandSeparator />
 
-          <CommandSeparator />
+        <CommandLinkGroup
+          heading="Social Links"
+          links={SOCIAL_LINK_ITEMS}
+          onLinkSelect={handleOpenLink}
+        />
 
-          <CommandLinkGroup
-            heading="Blog"
-            links={blogLinks}
-            fallbackIcon={TextIcon}
-            onLinkSelect={handleOpenLink}
-          />
+        <CommandSeparator />
 
-          <CommandSeparator />
+        <CommandGroup heading="Theme">
+          <CommandItem
+            keywords={["theme"]}
+            onSelect={() => handleThemeChange("light")}
+          >
+            <SunIcon />
+            Light
+          </CommandItem>
+          <CommandItem
+            keywords={["theme"]}
+            onSelect={() => handleThemeChange("dark")}
+          >
+            <MoonStarIcon />
+            Dark
+          </CommandItem>
+          <CommandItem
+            keywords={["theme"]}
+            onSelect={() => handleThemeChange("system")}
+          >
+            <Icons.contrast />
+            Auto
+          </CommandItem>
+        </CommandGroup>
+      </CommandList>
 
-          <CommandLinkGroup
-            heading="Components"
-            links={componentLinks}
-            fallbackIcon={Icons.react}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandLinkGroup
-            heading="Social Links"
-            links={SOCIAL_LINK_ITEMS}
-            onLinkSelect={handleOpenLink}
-          />
-
-          <CommandSeparator />
-
-          <CommandGroup heading="Theme">
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={() => handleThemeChange("light")}
-            >
-              <SunIcon />
-              Light
-            </CommandItem>
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={() => handleThemeChange("dark")}
-            >
-              <MoonStarIcon />
-              Dark
-            </CommandItem>
-            <CommandItem
-              keywords={["theme"]}
-              onSelect={() => handleThemeChange("system")}
-            >
-              <Icons.contrast />
-              Auto
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
-
-        <CommandMenuFooter />
-      </CommandDialog>
-    </>
+      <CommandMenuFooter />
+    </CommandDialog>
   );
 }
 
@@ -314,7 +242,7 @@ function CommandLinkGroup({
           >
             {link?.iconImage ? (
               <Image
-                className="rounded-sm"
+                className={cn("rounded-sm", link.iconInvert && "dark:invert")}
                 src={link.iconImage}
                 alt={link.title}
                 width={16}
@@ -344,23 +272,15 @@ type CommandMetaMap = Map<
 function buildCommandMetaMap() {
   const commandMetaMap: CommandMetaMap = new Map();
 
-  commandMetaMap.set("Download vCard", { commandKind: "command" });
+  commandMetaMap.set("Copy Email", { commandKind: "command" });
+  commandMetaMap.set("Open Terminal", { commandKind: "command" });
+  commandMetaMap.set("Book a Call", { commandKind: "link" });
 
   commandMetaMap.set("Light", { commandKind: "command" });
   commandMetaMap.set("Dark", { commandKind: "command" });
   commandMetaMap.set("Auto", { commandKind: "command" });
 
-  commandMetaMap.set("Copy Mark as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Copy Logotype as SVG", {
-    commandKind: "command",
-  });
-  commandMetaMap.set("Download Brand Assets", {
-    commandKind: "command",
-  });
-
-  SOCIAL_LINK_ITEMS.forEach((item) => {
+  [...PROJECT_LINKS, ...SOCIAL_LINK_ITEMS].forEach((item) => {
     commandMetaMap.set(item.title, {
       commandKind: "link",
     });
@@ -387,7 +307,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <span className="font-mono text-xs text-muted-foreground">S</span>
+        <span className="font-mono text-xs text-muted-foreground">SB</span>
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>
@@ -416,14 +336,4 @@ function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
       {...props}
     />
   );
-}
-
-function postToCommandLinkItem(post: Post): CommandLinkItem {
-  const isComponent = post.metadata?.category === "components";
-
-  return {
-    title: post.metadata.title,
-    href: isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`,
-    keywords: isComponent ? ["component"] : undefined,
-  };
 }

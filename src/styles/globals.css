@@ -21,6 +21,7 @@
   --color-popover-border: var(--popover-border);
   --color-accent: var(--accent);
   --color-accent2: var(--accent2);
+  --color-brand: var(--brand);
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-edge: var(--edge);
@@ -43,6 +44,16 @@
   --shadow-popover: var(--shadow-popover);
 }
 
+@theme {
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
 @utility no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -54,7 +65,7 @@
 }
 
 @utility link {
-  @apply font-medium underline underline-offset-4;
+  @apply font-medium underline underline-offset-4 transition-[text-decoration-color] hover:decoration-brand;
 }
 
 @utility screen-line-before {
@@ -129,8 +140,10 @@
   /* zinc-200 */
   --input: oklch(0.92 0.004 286.32);
 
-  /* zinc-400 */
-  --ring: oklch(0.705 0.015 286.067);
+  /* amber-600, taken from the avatar; the site's single accent */
+  --brand: oklch(0.666 0.179 58.318);
+
+  --ring: var(--brand);
 
   --info: oklch(0.67 0.17 244.98);
 
@@ -155,11 +168,11 @@
   /* zinc-100 */
   --code-highlight: oklch(0.967 0.001 286.375);
 
-  /* zinc-950 */
-  --selection: oklch(0.141 0.005 285.823);
+  /* amber-300 */
+  --selection: oklch(0.879 0.169 91.605);
 
-  /* zinc-50 */
-  --selection-foreground: oklch(0.985 0 0);
+  /* zinc-950 */
+  --selection-foreground: oklch(0.141 0.005 285.823);
 
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
@@ -220,8 +233,10 @@
   /* zinc-800 */
   --input: oklch(0.274 0.006 286.033);
 
-  /* zinc-500 */
-  --ring: oklch(0.552 0.016 285.938);
+  /* amber-400 */
+  --brand: oklch(0.828 0.189 84.429);
+
+  --ring: var(--brand);
 
   /* green-500 */
   --success: oklch(0.723 0.219 149.579);
@@ -244,8 +259,8 @@
   /* zinc-800 */
   --code-highlight: oklch(0.274 0.006 286.033);
 
-  /* zinc-50 */
-  --selection: oklch(0.985 0 0);
+  /* amber-400 */
+  --selection: oklch(0.828 0.189 84.429);
 
   /* zinc-950 */
   --selection-foreground: oklch(0.141 0.005 285.823);

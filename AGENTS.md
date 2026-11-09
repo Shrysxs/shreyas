@@ -205,15 +205,17 @@ do not port over ncdai's actual components.
 ## 8. Visual Direction
 
 Keep the original's minimal mono (black/white/gray) aesthetic, tight typography,
-generous whitespace, and restrained motion. This is a deliberate "clean and crisp"
-choice, not a placeholder — don't add a color accent unless Shreyas asks later.
+generous whitespace, and restrained motion. Shreyas asked for one accent: amber
+(`--brand` in globals.css, amber-600 light / amber-400 dark, taken from the avatar).
+Use it sparingly — active nav, "current" dots, the winner badge, link-underline hover,
+selection, focus rings and the terminal prompt. Don't add a second accent color.
 Focus polish on: consistent spacing scale, sharp type hierarchy, and removing any
 visual debt/inconsistency inherited from the clone.
 
 ## 9. Explicitly Out of Scope (for now)
 
 - Resume/CV download button — skip entirely, do not add a placeholder
-- Custom color theming — stick to mono per section 8
+- Custom color theming — mono plus the single amber accent per section 8
 - Fabricated blog posts or registry components — leave both scaffolds empty
 
 ## 10. Build Order (recommended for the coding agent)

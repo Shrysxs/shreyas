@@ -41,7 +41,7 @@ export function ProfileHeader() {
             {USER.displayName}
             &nbsp;
             <SimpleTooltip content="Verified">
-              <VerifiedIcon className="size-[0.6em] translate-y-px text-info select-none" />
+              <VerifiedIcon className="size-[0.6em] translate-y-px text-brand select-none" />
             </SimpleTooltip>
             {USER.namePronunciationUrl && (
               <>

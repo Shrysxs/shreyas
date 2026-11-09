@@ -39,7 +39,8 @@ export function NavItem({
     <Link
       className={cn(
         "font-mono text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground",
-        active && "text-foreground"
+        active &&
+          "text-foreground underline decoration-brand decoration-2 underline-offset-8"
       )}
       {...props}
     />

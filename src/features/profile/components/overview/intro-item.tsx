@@ -21,7 +21,7 @@ export function IntroItem({
       <p className="text-balance">
         {href ? (
           <a
-            className="underline-offset-4 hover:underline"
+            className="underline-offset-4 hover:underline hover:decoration-brand"
             href={href}
             target="_blank"
             rel="noopener noreferrer"

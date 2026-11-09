@@ -1,6 +1,8 @@
 import { SITE_INFO } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+import { FooterSeparator, FooterShortcuts } from "./footer-shortcuts";
+
 export function SiteFooter() {
   return (
     <footer className="max-w-screen overflow-x-hidden px-2">
@@ -46,6 +48,10 @@ export function SiteFooter() {
             >
               llms.txt
             </a>
+
+            <FooterSeparator />
+
+            <FooterShortcuts />
           </div>
         </div>
       </div>
