@@ -30,7 +30,7 @@ I'm open to full-time roles, freelance work and early-stage teams, remote or wit
 
 Outside of code, I spend most of my time in a Linux terminal and read about distributed systems, physics and history.`,
   avatar: "/avatar.jpg",
-  ogImage: "/og/simple?title=Shreyas",
+  ogImage: "/og/simple",
   namePronunciationUrl: "",
   keywords: [
     "shreyas",

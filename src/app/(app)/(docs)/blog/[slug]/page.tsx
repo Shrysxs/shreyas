@@ -45,7 +45,9 @@ export async function generateMetadata({
   const { title, description, image, createdAt, updatedAt } = post.metadata;
 
   const postUrl = getPostUrl(post);
-  const ogImage = image || `/og/simple?title=${encodeURIComponent(title)}`;
+  const ogImage =
+    image ||
+    `/og/simple?title=${encodeURIComponent(title)}&path=${encodeURIComponent(postUrl)}`;
 
   return {
     title,
@@ -80,7 +82,7 @@ function getPageJsonLd(post: Post): WithContext<PageSchema> {
     description: post.metadata.description,
     image:
       post.metadata.image ||
-      `/og/simple?title=${encodeURIComponent(post.metadata.title)}`,
+      `/og/simple?title=${encodeURIComponent(post.metadata.title)}&path=${encodeURIComponent(getPostUrl(post))}`,
     url: `${SITE_INFO.url}${getPostUrl(post)}`,
     datePublished: dayjs(post.metadata.createdAt).toISOString(),
     dateModified: dayjs(post.metadata.updatedAt).toISOString(),
