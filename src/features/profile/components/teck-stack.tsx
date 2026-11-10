@@ -7,31 +7,7 @@ import { SimpleTooltip } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
 import { TECH_STACK } from "../data/tech-stack";
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
-
-// Map tech keys to devicons names (https://devicons.github.io/devicon/)
-const DEVICON_OVERRIDES: Record<string, string> = {
-  nextjs2: "nextjs",
-  js: "javascript",
-  shadcn_ui: "tailwindcss",
-  "shadcn-ui": "tailwindcss",
-  radixui: "radixui",
-  mobx_state_tree: "mobx",
-  chatgpt: "openai",
-  ps: "photoshop",
-  nodejs: "nodejs",
-  bun: "bun",
-};
-
-function getDeviconName(key: string): string {
-  return DEVICON_OVERRIDES[key] ?? key.replace(/-/g, "");
-}
-
-function getDeviconUrl(key: string, colored = true): string {
-  const name = getDeviconName(key);
-  const variant = colored ? "original" : "plain";
-  return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${variant}.svg`;
-}
+import { Panel, PanelHeader, PanelTitle } from "./panel";
 
 export function TeckStack() {
   return (
@@ -40,56 +16,39 @@ export function TeckStack() {
         <PanelTitle>Stack</PanelTitle>
       </PanelHeader>
 
-      <PanelContent
-        className={cn(
-          "[--pattern-foreground:var(--color-zinc-950)]/5 dark:[--pattern-foreground:var(--color-white)]/5",
-          "bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center",
-          "bg-zinc-950/0.75 dark:bg-white/0.75"
-        )}
-      >
-        <ul className="flex flex-wrap gap-2.5 select-none sm:gap-3">
-          {TECH_STACK.map((tech) => {
-            return (
-              <li key={tech.key} className="flex">
-                <SimpleTooltip content={tech.title}>
-                  <a
-                    href={tech.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={tech.title}
-                    className="group/tech flex items-center justify-center rounded-lg p-1.5 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
-                  >
-                    <Image
-                      src={tech.icon || getDeviconUrl(tech.key)}
-                      alt={`${tech.title} icon`}
-                      width={24}
-                      height={24}
-                      className={cn(
-                        "size-6 grayscale transition-[filter] duration-300 group-hover/tech:grayscale-0 group-focus-visible/tech:grayscale-0",
-                        tech.theme && "dark:invert"
-                      )}
-                      unoptimized
-                      onError={(e) => {
-                        const img = e.currentTarget;
-                        const deviconUrl = getDeviconUrl(tech.key);
-                        if (
-                          img.src !== deviconUrl &&
-                          !img.src.includes("/icons/")
-                        ) {
-                          img.src = deviconUrl;
-                        } else if (!img.src.includes("plain")) {
-                          img.src = getDeviconUrl(tech.key, false);
-                        }
-                      }}
-                    />
-                    <span className="sr-only">{tech.title}</span>
-                  </a>
-                </SimpleTooltip>
-              </li>
-            );
-          })}
-        </ul>
-      </PanelContent>
+      {/* 28 items → 4 cols (7 rows) on mobile, 7 cols (4 rows) from sm: every row is full. */}
+      <ul className="grid grid-cols-4 gap-px bg-edge select-none sm:grid-cols-7">
+        {TECH_STACK.map((tech) => {
+          return (
+            <li key={tech.key} className="flex bg-background">
+              <SimpleTooltip content={tech.title}>
+                <a
+                  href={tech.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={tech.title}
+                  className="group/tech flex w-full flex-col items-center justify-center gap-2 px-1 py-4 transition-colors hover:bg-zinc-950/[0.03] focus-visible:bg-zinc-950/[0.03] dark:hover:bg-white/[0.04] dark:focus-visible:bg-white/[0.04]"
+                >
+                  <Image
+                    src={tech.icon ?? `/tech-stack-icons/${tech.key}.svg`}
+                    alt=""
+                    width={32}
+                    height={32}
+                    className={cn(
+                      "size-8 object-contain transition-transform duration-300 ease-out group-hover/tech:-translate-y-0.5 group-hover/tech:scale-110 motion-reduce:transition-none motion-reduce:group-hover/tech:transform-none",
+                      tech.theme && "dark:invert"
+                    )}
+                    unoptimized
+                  />
+                  <span className="w-full truncate text-center font-mono text-[11px] leading-none text-muted-foreground transition-colors group-hover/tech:text-foreground">
+                    {tech.title}
+                  </span>
+                </a>
+              </SimpleTooltip>
+            </li>
+          );
+        })}
+      </ul>
     </Panel>
   );
 }
