@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
 import React, { useCallback } from "react";
 import { toast } from "sonner";
 
@@ -32,6 +31,7 @@ import {
 import { PROJECTS } from "@/features/profile/data/projects";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { USER } from "@/features/profile/data/user";
+import { useThemeTransition } from "@/hooks/use-theme-transition";
 import { cn } from "@/lib/utils";
 import { copyText } from "@/utils/copy";
 import { decodeEmail } from "@/utils/string";
@@ -104,7 +104,7 @@ export function CommandMenu({
 }) {
   const router = useRouter();
 
-  const { setTheme } = useTheme();
+  const { setTheme } = useThemeTransition();
 
   const handleOpenLink = useCallback(
     (href: string, openInNewTab = false) => {

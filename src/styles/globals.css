@@ -355,3 +355,10 @@
     @apply bg-code-highlight;
   }
 }
+
+/* Theme switch crossfade (see hooks/use-theme-transition.ts) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 250ms;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}

@@ -2,10 +2,10 @@
 
 import { MonitorIcon, MoonStarIcon, SunIcon } from "lucide-react";
 import { motion } from "motion/react";
-import { useTheme } from "next-themes";
 import type { JSX } from "react";
 import React, { useEffect, useState } from "react";
 
+import { useThemeTransition } from "@/hooks/use-theme-transition";
 import { cn } from "@/lib/utils";
 
 function ThemeOption({
@@ -61,7 +61,7 @@ const THEME_OPTIONS = [
 ];
 
 function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useThemeTransition();
 
   const [isMounted, setIsMounted] = useState(false);
 

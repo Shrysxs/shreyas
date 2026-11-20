@@ -1,7 +1,6 @@
 "use client";
 
 import { XIcon } from "lucide-react";
-import { useTheme } from "next-themes";
 import React, { useEffect, useRef, useState } from "react";
 
 import { EXPERIENCES } from "@/features/profile/data/experiences";
@@ -9,6 +8,7 @@ import { HACKATHONS } from "@/features/profile/data/hackathons";
 import { PROJECTS } from "@/features/profile/data/projects";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { USER } from "@/features/profile/data/user";
+import { useThemeTransition } from "@/hooks/use-theme-transition";
 import { cn } from "@/lib/utils";
 import { decodeEmail } from "@/utils/string";
 
@@ -239,7 +239,7 @@ const HIDDEN_COMMANDS = new Set(["sudo", "rm", "cd", "pwd", "echo", "vim"]);
 const WELCOME = `welcome to ~/${NAME}. type \`help\` to see what you can do.`;
 
 export function Terminal({ onClose }: { onClose: () => void }) {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useThemeTransition();
 
   const [lines, setLines] = useState<Line[]>([
     { id: 0, kind: "output", text: WELCOME },
