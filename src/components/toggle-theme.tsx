@@ -26,9 +26,14 @@ export function ToggleTheme() {
   }, [resolvedTheme, setTheme, setMetaColor]);
 
   return (
-    <Button variant="outline" size="icon" onClick={handleToggle}>
-      <MoonStarIcon className="hidden [html.dark_&]:block" />
-      <SunIcon className="hidden [html.light_&]:block" />
+    <Button
+      variant="outline"
+      size="icon"
+      className="relative"
+      onClick={handleToggle}
+    >
+      <SunIcon className="scale-100 rotate-0 opacity-100 transition-[rotate,scale,opacity] duration-300 ease-out motion-reduce:transition-none [html.dark_&]:scale-50 [html.dark_&]:-rotate-90 [html.dark_&]:opacity-0" />
+      <MoonStarIcon className="absolute scale-50 rotate-90 opacity-0 transition-[rotate,scale,opacity] duration-300 ease-out motion-reduce:transition-none [html.dark_&]:scale-100 [html.dark_&]:rotate-0 [html.dark_&]:opacity-100" />
       <span className="sr-only">Toggle Theme</span>
     </Button>
   );
