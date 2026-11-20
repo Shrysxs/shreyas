@@ -64,7 +64,7 @@ export async function GET(request: Request) {
           <div tw="flex items-center text-2xl text-zinc-500">
             <img
               src={`data:image/jpeg;base64,${avatarData.toString("base64")}`}
-              tw="w-10 h-10 rounded-full mr-4 border border-zinc-700"
+              tw="w-10 h-10 rounded-full mr-4 object-cover border border-zinc-700"
             />
             {DOMAIN}
           </div>
