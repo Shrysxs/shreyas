@@ -15,7 +15,7 @@ function getWebSiteJsonLd(): WithContext<WebSite> {
     "@type": "WebSite",
     name: SITE_INFO.name,
     url: SITE_INFO.url,
-    alternateName: [USER.username],
+    alternateName: [USER.username, USER.displayName],
   };
 }
 
@@ -41,17 +41,32 @@ export const metadata: Metadata = {
   },
   title: {
     template: `%s – ${SITE_INFO.name}`,
-    default: `${USER.displayName}`,
+    default: SITE_INFO.title,
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: USER.username,
+      name: SITE_INFO.name,
       url: SITE_INFO.url,
     },
   ],
-  creator: USER.username,
+  creator: SITE_INFO.name,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    },
+  }),
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
@@ -65,7 +80,7 @@ export const metadata: Metadata = {
         url: SITE_INFO.ogImage,
         width: 1200,
         height: 630,
-        alt: SITE_INFO.name,
+        alt: SITE_INFO.title,
       },
     ],
   },

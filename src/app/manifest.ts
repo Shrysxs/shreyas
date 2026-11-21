@@ -4,7 +4,7 @@ import { SITE_INFO } from "@/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    short_name: SITE_INFO.name,
+    short_name: SITE_INFO.shortName,
     name: SITE_INFO.name,
     description: SITE_INFO.description,
     icons: [

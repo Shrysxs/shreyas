@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
+import { SITE_INFO } from "@/config/site";
 import { About } from "@/features/profile/components/about";
 import { Experiences } from "@/features/profile/components/experiences";
 import { Hackathons } from "@/features/profile/components/hackathons";
@@ -10,6 +11,7 @@ import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
 import { SocialLinks } from "@/features/profile/components/social-links";
 import { TeckStack } from "@/features/profile/components/teck-stack";
+import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
 
@@ -57,11 +59,37 @@ function getPageJsonLd(): WithContext<PageSchema> {
     "@type": "ProfilePage",
     dateCreated: dayjs(USER.dateCreated).toISOString(),
     dateModified: dayjs().toISOString(),
+    url: SITE_INFO.url,
     mainEntity: {
       "@type": "Person",
-      name: USER.displayName,
+      "@id": `${SITE_INFO.url}/#person`,
+      name: SITE_INFO.name,
+      givenName: USER.firstName,
+      familyName: USER.lastName,
+      alternateName: [USER.username, USER.displayName],
       identifier: USER.username,
-      image: USER.avatar,
+      url: SITE_INFO.url,
+      image: `${SITE_INFO.url}${USER.avatar}`,
+      description: SITE_INFO.description,
+      jobTitle: "Full Stack Developer",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pune",
+        addressRegion: "Maharashtra",
+        addressCountry: "IN",
+      },
+      knowsAbout: [
+        "Full stack development",
+        "Web3",
+        "Smart contracts",
+        "Solana",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "AI",
+      ],
+      // Links every profile to this site so Google treats them as one person.
+      sameAs: SOCIAL_LINKS.map((link) => link.href),
     },
   };
 }

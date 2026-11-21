@@ -1,11 +1,16 @@
 import { USER } from "@/features/profile/data/user";
 import type { NavItem } from "@/types/nav";
 
+const FULL_NAME = `${USER.firstName} ${USER.lastName}`;
+
 export const SITE_INFO = {
-  name: USER.displayName,
+  name: FULL_NAME,
+  shortName: USER.displayName,
+  /** Default <title>: full name + handle + role, what people search for. */
+  title: `${FULL_NAME} (${USER.username}) – Full Stack & Web3 Developer`,
   url: process.env.NEXT_PUBLIC_APP_URL || "https://shrysxs.vercel.app",
   ogImage: USER.ogImage,
-  description: USER.bio,
+  description: `${FULL_NAME} (${USER.username}) is a full stack and Web3 developer in Pune, India, building products across AI, Web3 and modern web technologies with TypeScript, React and Next.js.`,
   keywords: USER.keywords,
 };
 

@@ -17,7 +17,7 @@ export function ProfileHeader() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="size-32 rounded-full object-cover ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40"
-            alt={`${USER.displayName}'s avatar`}
+            alt={`${USER.firstName} ${USER.lastName} (${USER.username})`}
             src={USER.avatar}
             fetchPriority="high"
           />

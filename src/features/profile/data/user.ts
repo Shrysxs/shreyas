@@ -33,12 +33,17 @@ Outside of code, I spend most of my time in a Linux terminal and read about dist
   ogImage: "/og/simple",
   namePronunciationUrl: "",
   keywords: [
-    "shreyas",
-    "shreyas borade",
+    "Shreyas Borade",
     "shrysxs",
-    "fullstack",
-    "web3",
-    "smart contracts",
+    "Shreyas",
+    "Shreyas Borade developer",
+    "Shreyas Borade Pune",
+    "full stack developer Pune",
+    "web3 developer",
+    "smart contract developer",
+    "Solana developer",
+    "Next.js developer",
+    "TypeScript",
   ],
   dateCreated: "2025-09-20", // YYYY-MM-DD
 };
