@@ -1,8 +1,13 @@
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
+import { PROFILE_SUMMARY } from "@/features/profile/data/summary";
 import { TECH_STACK } from "@/features/profile/data/tech-stack";
 import { USER } from "@/features/profile/data/user";
 
-const content = `# About
+const content = `# About Shreyas Borade
+
+${PROFILE_SUMMARY}
+
+## In his own words
 
 ${USER.about.trim()}
 

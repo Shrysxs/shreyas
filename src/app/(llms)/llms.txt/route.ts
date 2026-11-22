@@ -1,15 +1,20 @@
 import { SITE_INFO } from "@/config/site";
 import { getAllPosts } from "@/features/blog/data/posts";
+import { PROFILE_SUMMARY } from "@/features/profile/data/summary";
 
 const allPosts = getAllPosts();
 
 const content = `# shrysxs.vercel.app
 
-> A minimal portfolio, component registry, and blog to showcase my work as a Full Stack & Web3 Developer.
+> Portfolio of Shreyas Borade (shrysxs), a full-stack and Web3 developer based in Pune, India.
 
-- [About](${SITE_INFO.url}/about.md): A quick intro to me, my tech stack, and how to connect.
-- [Experience](${SITE_INFO.url}/experience.md): Highlights from my career and key roles I've taken on.
-- [Projects](${SITE_INFO.url}/projects.md): Selected projects that show my skills and creativity.
+${PROFILE_SUMMARY}
+
+- [About](${SITE_INFO.url}/about.md): Bio, tech stack and contact links.
+- [Experience](${SITE_INFO.url}/experience.md): Roles, including co-founder of Nox Market.
+- [Hackathons](${SITE_INFO.url}/hackathons.md): Hackathon builds, including the Monad Blitz Pune win.
+- [Projects](${SITE_INFO.url}/projects.md): Shipped projects with live links and tech details.
+- [Full profile](${SITE_INFO.url}/llms-full.txt): Everything above in one file.
 
 ## Blog
 

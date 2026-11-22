@@ -12,6 +12,7 @@ import { Projects } from "@/features/profile/components/projects";
 import { SocialLinks } from "@/features/profile/components/social-links";
 import { TeckStack } from "@/features/profile/components/teck-stack";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
+import { PROFILE_SUMMARY } from "@/features/profile/data/summary";
 import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
 
@@ -70,8 +71,18 @@ function getPageJsonLd(): WithContext<PageSchema> {
       identifier: USER.username,
       url: SITE_INFO.url,
       image: `${SITE_INFO.url}${USER.avatar}`,
-      description: SITE_INFO.description,
+      description: PROFILE_SUMMARY.replace(/\n+/g, " "),
       jobTitle: "Full Stack Developer",
+      nationality: { "@type": "Country", name: "India" },
+      worksFor: [
+        {
+          "@type": "Organization",
+          name: "Nox Market",
+          description:
+            "Solana-based platform that verifies trading skill against historical market data.",
+        },
+      ],
+      award: ["Winner, Monad Blitz Pune (July 2026)"],
       address: {
         "@type": "PostalAddress",
         addressLocality: "Pune",

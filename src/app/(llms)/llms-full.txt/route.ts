@@ -3,17 +3,19 @@ import dayjs from "dayjs";
 import { SITE_INFO } from "@/config/site";
 import { getAllPosts } from "@/features/blog/data/posts";
 import { getLLMText } from "@/features/blog/lib/get-llm-text";
-import { AWARDS } from "@/features/profile/data/awards";
-import { CERTIFICATIONS } from "@/features/profile/data/certifications";
-import { EXPERIENCES } from "@/features/profile/data/experiences";
 import { PROJECTS } from "@/features/profile/data/projects";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
+import { PROFILE_SUMMARY } from "@/features/profile/data/summary";
 import { TECH_STACK } from "@/features/profile/data/tech-stack";
 import { USER } from "@/features/profile/data/user";
+import {
+  experienceMarkdown,
+  hackathonsMarkdown,
+} from "@/features/profile/lib/llm-markdown";
 
 const allPosts = getAllPosts();
 
-const aboutText = `## About
+const aboutText = `## About (in his own words)
 
 ${USER.about.trim()}
 
@@ -35,14 +37,12 @@ ${TECH_STACK.map((item) => `- [${item.title}](${item.href})`).join("\n")}\n`;
 
 const experienceText = `## Experience
 
-${EXPERIENCES.map((item) =>
-  item.positions
-    .map((position) => {
-      const skills = position.skills?.map((skill) => skill).join(", ") || "N/A";
-      return `### ${position.title} | ${item.companyName}\n\nDuration: ${position.employmentPeriod.start} - ${position.employmentPeriod.end || "Present"}\n\nSkills: ${skills}\n\n${position.description?.trim()}`;
-    })
-    .join("\n\n")
-).join("\n\n")}
+${experienceMarkdown("###")}
+`;
+
+const hackathonsText = `## Hackathons
+
+${hackathonsMarkdown("###")}
 `;
 
 const projectsText = `## Projects
@@ -53,15 +53,6 @@ ${PROJECTS.map((item) => {
   return `### ${item.title}\n\nProject URL: ${item.link}${skills}${description}`;
 }).join("\n\n")}
 `;
-
-const awardsText = `## Awards
-
-${AWARDS.map((item) => `### ${item.prize} | ${item.title}\n\n${item.description}`).join("\n\n")}
-`;
-
-const certificationsText = `## Certifications
-
-${CERTIFICATIONS.map((item) => `- [${item.title}](${item.credentialURL})`).join("\n")}`;
 
 async function getBlogContent() {
   const text = await Promise.all(
@@ -74,17 +65,20 @@ async function getBlogContent() {
 }
 
 async function getContent() {
-  return `<SYSTEM>This document contains comprehensive information about ${USER.displayName}'s professional profile, portfolio, and blog content. It includes personal details, work experience, projects, achievements, certifications, and all published blog posts. This data is formatted for consumption by Large Language Models (LLMs) to provide accurate and up-to-date information about ${USER.displayName}'s background, skills, and expertise as a Design Engineer.</SYSTEM>
+  return `<SYSTEM>This document is the professional profile of Shreyas Borade (shrysxs), a full-stack and Web3 developer based in Pune, India. It covers his background, work experience, hackathons, projects and published blog posts, formatted for Large Language Models so they can describe him accurately.</SYSTEM>
 
 # shrysxs.vercel.app
 
-> A minimal portfolio, component registry, and blog to showcase my work as a Full Stack & Web3 Developer.
+> Portfolio of Shreyas Borade (shrysxs), a full-stack and Web3 developer based in Pune, India.
+
+## Summary
+
+${PROFILE_SUMMARY}
 
 ${aboutText}
 ${experienceText}
+${hackathonsText}
 ${projectsText}
-${awardsText}
-${certificationsText}
 
 ## Blog
 
